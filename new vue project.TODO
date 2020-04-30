@@ -16,11 +16,12 @@ What we are gonna use:
 - vue-head
 
 todo:
-    ✘ Make Vue project @cancelled(20-04-30 22:10)
-    ✘ Make Firebase database @cancelled(20-04-30 22:10)
-    ✘ Make Homepage design in Adobe XD @cancelled(20-04-30 22:24)
+    ✔ Make Vue project @done(20-05-01 00:05)
+    ✔ Make Firebase database @done(20-05-01 00:10)
+    ✔ Make Homepage design in Adobe XD @done(20-05-01 01:50)
     ✘ Make Faq design in Adobe XD @cancelled(20-04-30 22:24)
     ✘ Make Login design in Adobe XD @cancelled(20-04-30 22:25)
     ✘ Make Register design in Adobe XD @cancelled(20-04-30 22:26)
+    ✘ Install all packets @cancelled(20-05-01 00:03)
     ✘ Code Homepage page @cancelled(20-04-30 22:30)
     ✘ Connect Vue project with Firebase @cancelled(20-04-30 22:11)
