@@ -8,6 +8,13 @@ share your project ideas and make friends and work togeter on a project. You nee
 Date:
 ☐ 30-04-2020
 
+What we are gonna use:
+- Bootstrap
+- Firebase
+- firebase-admin
+- firebase-functions
+- vue-head
+
 todo:
     ✘ Make Vue project @cancelled(20-04-30 22:10)
     ✘ Make Firebase database @cancelled(20-04-30 22:10)
