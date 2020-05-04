@@ -9,8 +9,17 @@
     "start": "npm run serve"
   },
   "dependencies": {
+    "bootstrap": "^4.4.1",
     "core-js": "^3.6.4",
+    "firebase": "^7.14.2",
+    "firebase-admin": "^8.11.0",
+    "firebase-functions": "^3.6.1",
+    "jquery": "^3.5.0",
+    "node-sass": "^4.14.0",
+    "popper.js": "^1.16.1",
+    "sass-loader": "^8.0.2",
     "vue": "^2.6.11",
+    "vue-head": "^2.2.0",
     "vue-router": "^3.1.6"
   },
   "devDependencies": {

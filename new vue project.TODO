@@ -1,5 +1,7 @@
 Name:
-see code projects
+See Code Projects
+OR
+Share Code Projects
 
 Description:
 On this project you can publish your projects and share it with other people they can download it and
@@ -15,13 +17,30 @@ What we are gonna use:
 - firebase-functions
 - vue-head
 
+Login methods:
+- Email, Password
+- Google account
+- Github
+
 todo:
     ✔ Make Vue project @done(20-05-01 00:05)
     ✔ Make Firebase database @done(20-05-01 00:10)
-    ✔ Make Homepage design in Adobe XD @done(20-05-01 01:50)
-    ✘ Make Faq design in Adobe XD @cancelled(20-04-30 22:24)
-    ✘ Make Login design in Adobe XD @cancelled(20-04-30 22:25)
-    ✘ Make Register design in Adobe XD @cancelled(20-04-30 22:26)
-    ✘ Install all packets @cancelled(20-05-01 00:03)
-    ✘ Code Homepage page @cancelled(20-04-30 22:30)
+    ✔ Make Homepage design in Photoshop @done(20-05-01 01:50)
+    ✔ Make Faq design in Photoshop @done(20-05-01 15:39)
+    ✔ Make Login design in Photoshop @done(20-05-01 15:58)
+    ✔ Make Register design in Photoshop @done(20-05-01 15:58)
+    ✔ Install all packets @done(20-05-01 16:03)
+    ✔ Make a illustrator vector @done(20-05-02 15:33)
+    ✔ Code login page @done(20-05-04 17:28)
+    ✔ Code Register page @done(20-05-04 17:28)
+
+@low 
+    ✘ Make the icons bigger of the vector @cancelled(20-05-02 15:34)
+    ✘ Code homepage page @cancelled(20-04-30 22:30)
+
+@today 
+    ✘ Code faq page @cancelled(20-05-04 17:28)
+    ✘ Design project page in Photoshop @cancelled(20-05-04 17:28)
     ✘ Connect Vue project with Firebase @cancelled(20-04-30 22:11)
+    ✘ Backend register @cancelled(20-05-04 17:29)
+    ✘ Backend login @cancelled(20-05-04 17:30)
