@@ -4,6 +4,7 @@ import Index from '../views/Index.vue'
 import Login from '../views/auth/Login.vue'
 import Projects from '../views/Projects/Projects.vue'
 import Faq from '../views/Faq.vue'
+import '../Database'
 
 Vue.use(VueRouter)
 

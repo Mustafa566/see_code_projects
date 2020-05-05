@@ -33,6 +33,7 @@ todo:
     ✔ Make a illustrator vector @done(20-05-02 15:33)
     ✔ Code login page @done(20-05-04 17:28)
     ✔ Code Register page @done(20-05-04 17:28)
+    ✔ Backend register @done(20-05-05 02:28)
 
 @low 
     ✘ Make the icons bigger of the vector @cancelled(20-05-02 15:34)
@@ -42,5 +43,4 @@ todo:
     ✘ Code faq page @cancelled(20-05-04 17:28)
     ✘ Design project page in Photoshop @cancelled(20-05-04 17:28)
     ✘ Connect Vue project with Firebase @cancelled(20-04-30 22:11)
-    ✘ Backend register @cancelled(20-05-04 17:29)
     ✘ Backend login @cancelled(20-05-04 17:30)
