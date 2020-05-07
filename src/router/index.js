@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Index from '../views/Index.vue'
-import Login from '../views/auth/Login.vue'
-import Projects from '../views/Projects/Projects.vue'
+import Login from '../views/Login.vue'
+import Projects from '../views/Projects.vue'
 import Faq from '../views/Faq.vue'
+import Profile from '../views/Profile.vue'
 import '../Database'
 
 Vue.use(VueRouter)
@@ -15,11 +16,6 @@ Vue.use(VueRouter)
     component: Index
   },
   {
-    path: '/Login',
-    name: 'Login',
-    component: Login
-  },
-  {
     path: '/Projects',
     name: 'Projects',
     component: Projects
@@ -28,6 +24,16 @@ Vue.use(VueRouter)
     path: '/Faq',
     name: 'Faq',
     component: Faq
+  },
+  {
+    path: '/Login',
+    name: 'Login',
+    component: Login
+  },
+  {
+    path: '/Profile',
+    name: 'Profile',
+    component: Profile
   }
 ]
 

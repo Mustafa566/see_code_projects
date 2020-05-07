@@ -5,20 +5,58 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <p class="whiteText">{{user}}</p>
       <ul class="nav justify-content-end">
         <router-link :to="{ name: 'Projects' }" class="nav-link headerSubText mr-5">Projects</router-link>
         <router-link :to="{ name: 'Faq' }" class="nav-link headerSubText mr-5">FAQ</router-link>
-        <router-link :to="{ name: 'Login' }" class="nav-link headerSubText">Login</router-link>
+        <router-link :to="{ name: 'Login' }" class="nav-link headerSubText" v-if="!isLoggedIn">Login</router-link>
+        <router-link :to="{ name: 'Profile' }" class="nav-link headerSubText mr-5" v-if="isLoggedIn">Profile</router-link>
+        <div class="nav-link headerSubText pointer" @click="logout" v-if="isLoggedIn">Logout</div>
       </ul>
     </nav>
       <router-view/>
-  <footer class="footer mt-5 py-3 darkBlueBackGround">
-    <div class="container text-center">
-      <span class="redText">See Code Projects &copy; 2020</span>
-    </div>
-  </footer>
+    <footer class="footer mt-5 py-3 darkBlueBackGround">
+      <div class="container text-center">
+        <span class="redText">See Code Projects &copy; 2020</span>
+      </div>
+    </footer>
   </div>
 </template>
+
+<script>
+import firebase from 'firebase';
+export default {
+  data() {
+    return {
+      isLoggedIn: false,
+      currentUser: false,
+      user: ''
+    }
+  },
+  methods: {
+    logout() {
+      firebase.auth().signOut().then(() => {
+        this.$router.push('/Login')
+        location.reload();
+      })
+    }
+  },
+  created() {
+    if(firebase.auth().currentUser) {
+      this.isLoggedIn = true;
+      this.user = firebase.auth().currentUser.email;
+    }
+    firebase.auth().onAuthStateChanged(currentUser => {
+      if (currentUser) {
+        this.user = firebase.auth().currentUser.email;
+        this.isLoggedIn = true;
+      } else {
+        console.log('no user'); 
+      }
+    });
+  }
+}
+</script>
 
 <style lang="scss">
 @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
@@ -26,7 +64,7 @@
 $darkbluecolor: #182b3a;
 $redcolor: #dd1843;
 $white: #fff;
-$font: Ethnocentric;
+$font: 'Righteous', cursive;
 
 /* Stardart class */
 
@@ -75,12 +113,13 @@ $font: Ethnocentric;
 .headerText, .headerText:hover {
   color: $white;
   font-family: $font;
+  font-size: 28px;
 }
 
 .headerSubText, .headerSubText:hover {
   color: $white;
   font-family: $font;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .headerSubText:hover, .headerSubText:active, .headerSubText:focus {
@@ -147,4 +186,8 @@ $font: Ethnocentric;
   padding: 15px;
   border-radius: 30px 30px 0px 0px;
 }
+
+/* Project page */
+
+
 </style>
