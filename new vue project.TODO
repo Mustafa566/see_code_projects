@@ -37,6 +37,8 @@ todo:
     ✔ Backend register @done(20-05-05 02:28)
     ✔ Backend login @done(20-05-06 16:26)
     ✔ Design project page in Photoshop @done(20-05-06 18:15)
+    ✔ Code project page (Without firebase data) @done(20-05-08 16:51)
+    ✔ Favorite img @click done @done(20-05-08 18:44)
 
 Layouts:
     - (Project page) https://flippa.com/search?search_template=most_relevant&beta=t&utm_expid=.z_AMQG6CTwCIkTIKsUlBRg.1&utm_referrer=https:%2F%2Fflippa.com%2Fwebsites&query%5Bkeyword%5D=&filter%5Bsale_method%5D=auction,classified&filter%5Bstatus%5D=open&filter%5Bproperty_type%5D=website,established_website,starter_site,fba,ios_app,android_app
@@ -45,9 +47,10 @@ Layouts:
     ✘ Make the icons bigger of the vector @cancelled(20-05-02 15:34)
     ✘ Code homepage page @cancelled(20-04-30 22:30)
     ✘ Code faq page @cancelled(20-05-04 17:28)
+    ✘ Favorite img @click uid of post (True or false) checkbox @cancelled(20-05-08 18:49)
 
 @IDEAS:
-    ✘ Button for favorite the post and goes to favorite page (Array push etc) @cancelled(20-05-06 16:56)
+    
 
 @today 
-    ✘ Code project page (Without firebase data) @cancelled(20-05-06 20:45)
+    ✘ Button for favorite the post and goes to favorite page (Array push etc) @cancelled(20-05-08 18:44)

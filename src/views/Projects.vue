@@ -52,7 +52,7 @@
             </div>
             <div class="col-md-8 col-sm-10 ml-5">
                 <div class="row">
-                    <div class="col cardMain">
+                    <div class="col-md-5 cardMain mr-4 mb-4">
                         <div class="row mr-1 mt-1">
                             <div class="col">
                                 <li class="text-success">Still on sale</li>
@@ -60,18 +60,56 @@
                             <p class="float-right">Date</p>
                         </div>
                         <div class="col ml-0">
-                            <h5>Project name</h5>
+                            <h5 class="redText">Project name</h5>
                             <p>This is the project description</p>
                         </div>
                         <div class="bottomCard">
-                            <span class="infoCard">fsdf</span>
+                            <div class="line"></div>
+                            <span class="infoCard">Website</span>
+                            <img src="@/assets/Icons/blackStar.png" class="favorIcon" @click="isHidden = !isHidden">
+                            <img src="@/assets/Icons/star.png" class="favorIcon" v-if="isHidden" @click="isHidden = !isHidden">
+                            <span class="infoCard float mr-4">User</span>
                         </div>
                     </div>
-                    <div class="col">
-                        hhsd
+
+                    <div class="col-md-5 cardMain mr-4">
+                        <div class="row mr-1 mt-1">
+                            <div class="col">
+                                <li class="text-success">Still on sale</li>
+                            </div>
+                            <p class="float-right">Date</p>
+                        </div>
+                        <div class="col ml-0">
+                            <h5 class="redText">Project name</h5>
+                            <p>This is the project description</p>
+                        </div>
+                        <div class="bottomCard">
+                            <div class="line"></div>
+                            <span class="infoCard">Website</span>
+                            <img src="@/assets/Icons/blackStar.png" class="favorIcon" @click="isHidden = !isHidden">
+                            <img src="@/assets/Icons/star.png" class="favorIcon" v-if="isHidden" @click="isHidden = !isHidden">
+                            <span class="infoCard float mr-4">User</span>
+                        </div>
                     </div>
-                    <div class="col">
-                        hhsd
+
+                    <div class="col-md-5 cardMain">
+                        <div class="row mr-1 mt-1">
+                            <div class="col">
+                                <li class="text-success">Still on sale</li>
+                            </div>
+                            <p class="float-right">Date</p>
+                        </div>
+                        <div class="col ml-0">
+                            <h5 class="redText">Project name</h5>
+                            <p>This is the project description</p>
+                        </div>
+                        <div class="bottomCard">
+                            <div class="line"></div>
+                            <span class="infoCard">Website</span>
+                            <img src="@/assets/Icons/blackStar.png" class="favorIcon" @click="isHidden = !isHidden">
+                            <img src="@/assets/Icons/star.png" class="favorIcon" v-if="isHidden" @click="isHidden = !isHidden">
+                            <span class="infoCard float mr-4">User</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -110,10 +148,37 @@
     position:absolute;
     bottom: 0;
 }
+
+.float {
+    position:absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.line {
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    bottom: 25px;
+    position: absolute;
+    left: 0;
+}
+
+.favorIcon {
+    width: 20px;
+    height: 20px;
+    bottom: 35px;
+    position: absolute;
+    right: 20px;
+}
 </style>
 
 <script>
 export default {
-    
+    data() {
+        return {
+            isHidden: false
+        }
+    }
 }
 </script>
