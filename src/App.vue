@@ -11,6 +11,7 @@
         <router-link :to="{ name: 'Faq' }" class="nav-link headerSubText mr-5">FAQ</router-link>
         <router-link :to="{ name: 'Login' }" class="nav-link headerSubText" v-if="!isLoggedIn">Login</router-link>
         <router-link :to="{ name: 'Profile' }" class="nav-link headerSubText mr-5" v-if="isLoggedIn">Profile</router-link>
+        <router-link :to="{ name: 'AddProject' }" class="nav-link headerSubText mr-5" v-if="isLoggedIn">Add project</router-link>
         <div class="nav-link headerSubText pointer" @click="logout" v-if="isLoggedIn">Logout</div>
       </ul>
     </nav>

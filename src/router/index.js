@@ -5,6 +5,7 @@ import Login from '../views/Login.vue'
 import Projects from '../views/Projects.vue'
 import Faq from '../views/Faq.vue'
 import Profile from '../views/Users/Profile.vue'
+import AddProject from '../views/Users/AddProject.vue'
 import '../Database'
 
 Vue.use(VueRouter)
@@ -34,6 +35,11 @@ Vue.use(VueRouter)
     path: '/Profile',
     name: 'Profile',
     component: Profile
+  },
+  {
+    path: '/AddProject',
+    name: 'AddProject',
+    component: AddProject
   }
 ]
 

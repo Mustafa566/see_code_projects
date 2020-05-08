@@ -1,7 +1,7 @@
 <template>
     <div>
-        <h1>Profile</h1>
-    </div>    
+        <h1>Add project</h1>
+    </div>
 </template>
 
 <script>
