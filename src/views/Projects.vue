@@ -20,7 +20,7 @@
                     <input type="checkbox" aria-label="Checkbox for following text input">
                     <label class="whiteText ml-2">Other</label><br>
 
-                    <h5 class="whiteText mt-5">Platform:</h5>
+                    <h5 class="whiteText mt-5">Programming Language:</h5>
                     <select class="select-standard">
                         <option value="all">Any</option> 
                         <option value="Angular js">Angular js</option> 
@@ -50,8 +50,30 @@
                     </select>                 
                 </div>
             </div>
-            <div class="col-md-8 col-sm-10 ml-5 redBackGround">
-                sdf
+            <div class="col-md-8 col-sm-10 ml-5">
+                <div class="row">
+                    <div class="col cardMain">
+                        <div class="row mr-1 mt-1">
+                            <div class="col">
+                                <li class="text-success">Still on sale</li>
+                            </div>
+                            <p class="float-right">Date</p>
+                        </div>
+                        <div class="col ml-0">
+                            <h5>Project name</h5>
+                            <p>This is the project description</p>
+                        </div>
+                        <div class="bottomCard">
+                            <span class="infoCard">fsdf</span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        hhsd
+                    </div>
+                    <div class="col">
+                        hhsd
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -76,6 +98,17 @@
     outline: 0;
     background-color: #fff;
     border-radius: .125rem;
+}
+
+.cardMain {
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 250px;
+}
+
+.infoCard {
+    position:absolute;
+    bottom: 0;
 }
 </style>
 

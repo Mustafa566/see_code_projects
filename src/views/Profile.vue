@@ -5,16 +5,28 @@
 </template>
 
 <script>
+import firebase from 'firebase';
 export default {
     data() {
         return {
             isLoggedIn: false,
+            currentUser: false,
+            user: ''
         }
     },
     created() {
-        if (this.isLoggedIn == false) {
-            this.$router.push('/Login')
+        if(firebase.auth().currentUser) {
+            this.isLoggedIn = true;
+            this.user = firebase.auth().currentUser.email;
         }
+        firebase.auth().onAuthStateChanged(currentUser => {
+            if (currentUser) {
+                this.user = firebase.auth().currentUser.email;
+                this.isLoggedIn = true;
+            } else {
+                console.log('no user'); 
+            }
+        });
     }
 }
 </script>
