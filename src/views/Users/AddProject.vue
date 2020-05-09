@@ -1,6 +1,7 @@
 <template>
     <div>
-        <h1>Add project</h1>
+        <div class="gap"></div>
+        <h1 class="text-center">Add project</h1>
     </div>
 </template>
 
