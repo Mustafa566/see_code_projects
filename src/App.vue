@@ -67,6 +67,7 @@ $darkbluecolor: #182b3a;
 $redcolor: #dd1843;
 $white: #fff;
 $font: 'Righteous', cursive;
+$whiteSmoke: #f3f3f3;
 
 /* Stardart class */
 
@@ -190,6 +191,19 @@ $font: 'Righteous', cursive;
 }
 
 /* Project page */
+.favorIcon {
+  cursor: pointer;
+}
 
+
+/* Add project page */
+.mainForm {
+  background-color: $whiteSmoke;
+  border-radius: 20px;
+}
+
+.submitProject {
+  margin-left: 10%;
+}
 
 </style>

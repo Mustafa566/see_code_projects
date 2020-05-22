@@ -92,7 +92,27 @@
                         </div>
                     </div>
 
-                    <div class="col-md-5 cardMain">
+                    <div class="col-md-5 cardMain mr-4">
+                        <div class="row mr-1 mt-1">
+                            <div class="col">
+                                <li class="text-success">Still on sale</li>
+                            </div>
+                            <p class="float-right">Date</p>
+                        </div>
+                        <div class="col ml-0">
+                            <h5 class="redText">Project name</h5>
+                            <p>This is the project description</p>
+                        </div>
+                        <div class="bottomCard">
+                            <div class="line"></div>
+                            <span class="infoCard">Website</span>
+                            <img src="@/assets/Icons/blackStar.png" class="favorIcon" @click="isHidden = !isHidden">
+                            <img src="@/assets/Icons/star.png" class="favorIcon" v-if="isHidden" @click="isHidden = !isHidden">
+                            <span class="infoCard float mr-4">User</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-5 cardMain mr-4 mb-4">
                         <div class="row mr-1 mt-1">
                             <div class="col">
                                 <li class="text-success">Still on sale</li>
