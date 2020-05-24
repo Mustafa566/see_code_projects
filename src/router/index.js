@@ -6,6 +6,7 @@ import Projects from '../views/Projects.vue'
 import Faq from '../views/Faq.vue'
 import Profile from '../views/Users/Profile.vue'
 import AddProject from '../views/Users/AddProject.vue'
+import EditItem from '../views/Users/EditItem.vue'
 import '../Database'
 
 Vue.use(VueRouter)
@@ -40,6 +41,11 @@ Vue.use(VueRouter)
     path: '/AddProject',
     name: 'AddProject',
     component: AddProject
+  },
+  {
+    name: 'Edit',
+    path: '/Edit/:id',
+    component: EditItem,
   }
 ]
 

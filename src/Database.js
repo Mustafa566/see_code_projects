@@ -1,4 +1,5 @@
 import Firebase from 'firebase'
+import 'firebase/firestore'
 
  let config = {
     apiKey: "AIzaSyBmrNxueqShC_R13cd2jI-mKsgykWEpLPA",

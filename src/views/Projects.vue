@@ -52,83 +52,31 @@
             </div>
             <div class="col-md-8 col-sm-10 ml-5">
                 <div class="row">
-                    <div class="col-md-5 cardMain mr-4 mb-4">
+                    <div class="col-md-5 cardMain mr-4 mb-4" v-for="project of addProject" :key="project['.key']">
                         <div class="row mr-1 mt-1">
                             <div class="col">
-                                <li class="text-success">Still on sale</li>
+                                <p class="float-left">Date</p>
                             </div>
-                            <p class="float-right">Date</p>
+                            <p class="redText">More info</p>
                         </div>
                         <div class="col ml-0">
-                            <h5 class="redText">Project name</h5>
-                            <p>This is the project description</p>
+                            <h5 class="redText">{{project.projectName}}</h5>
+                            <p>{{project.littleDescription}}</p>
                         </div>
                         <div class="bottomCard">
                             <div class="line"></div>
                             <span class="infoCard">Website</span>
                             <img src="@/assets/Icons/blackStar.png" class="favorIcon" @click="isHidden = !isHidden">
                             <img src="@/assets/Icons/star.png" class="favorIcon" v-if="isHidden" @click="isHidden = !isHidden">
-                            <span class="infoCard float mr-4">User</span>
-                        </div>
-                    </div>
-
-                    <div class="col-md-5 cardMain mr-4">
-                        <div class="row mr-1 mt-1">
-                            <div class="col">
-                                <li class="text-success">Still on sale</li>
+                            <span class="infoCard float mr-4">{{project.emailId}}</span>
+                            <div class="col-xs-1">
+                                <button @click="deleteItem(project['.key'])" class="btn btn-danger">Delete</button>
                             </div>
-                            <p class="float-right">Date</p>
-                        </div>
-                        <div class="col ml-0">
-                            <h5 class="redText">Project name</h5>
-                            <p>This is the project description</p>
-                        </div>
-                        <div class="bottomCard">
-                            <div class="line"></div>
-                            <span class="infoCard">Website</span>
-                            <img src="@/assets/Icons/blackStar.png" class="favorIcon" @click="isHidden = !isHidden">
-                            <img src="@/assets/Icons/star.png" class="favorIcon" v-if="isHidden" @click="isHidden = !isHidden">
-                            <span class="infoCard float mr-4">User</span>
-                        </div>
-                    </div>
-
-                    <div class="col-md-5 cardMain mr-4">
-                        <div class="row mr-1 mt-1">
-                            <div class="col">
-                                <li class="text-success">Still on sale</li>
+                            <div class="col-xs-1">
+                                <router-link :to="{ name: 'Edit', params: {id: project['.key']} }" class="btn btn-warning">
+                                    Edit
+                                </router-link>
                             </div>
-                            <p class="float-right">Date</p>
-                        </div>
-                        <div class="col ml-0">
-                            <h5 class="redText">Project name</h5>
-                            <p>This is the project description</p>
-                        </div>
-                        <div class="bottomCard">
-                            <div class="line"></div>
-                            <span class="infoCard">Website</span>
-                            <img src="@/assets/Icons/blackStar.png" class="favorIcon" @click="isHidden = !isHidden">
-                            <img src="@/assets/Icons/star.png" class="favorIcon" v-if="isHidden" @click="isHidden = !isHidden">
-                            <span class="infoCard float mr-4">User</span>
-                        </div>
-                    </div>
-
-                    <div class="col-md-5 cardMain mr-4 mb-4">
-                        <div class="row mr-1 mt-1">
-                            <div class="col">
-                                <li class="text-success">Still on sale</li>
-                            </div>
-                            <p class="float-right">Date</p>
-                        </div>
-                        <div class="col ml-0">
-                            <h5 class="redText">Project name</h5>
-                            <p>This is the project description</p>
-                        </div>
-                        <div class="bottomCard">
-                            <div class="line"></div>
-                            <span class="infoCard">Website</span>
-                            <img src="@/assets/Icons/blackStar.png" class="favorIcon" @click="isHidden = !isHidden">
-                            <img src="@/assets/Icons/star.png" class="favorIcon" v-if="isHidden" @click="isHidden = !isHidden">
-                            <span class="infoCard float mr-4">User</span>
                         </div>
                     </div>
                 </div>
@@ -137,67 +85,33 @@
     </div>
 </template>
 
-<style>
-.sideBar {
-    width: 150px;
-    height: 100vh;
-    border-radius: 30px;
-}
-
-.inputHeight {
-    height: 30px;
-}
-
-.select-standard {
-    width: 100%;
-    border-width: 1px;
-    border-color: #718096;
-    font-size: .875rem;
-    outline: 0;
-    background-color: #fff;
-    border-radius: .125rem;
-}
-
-.cardMain {
-    border: 1px solid black;
-    border-radius: 10px;
-    height: 250px;
-}
-
-.infoCard {
-    position:absolute;
-    bottom: 0;
-}
-
-.float {
-    position:absolute;
-    bottom: 0;
-    right: 0;
-}
-
-.line {
-    width: 100%;
-    height: 3px;
-    background-color: black;
-    bottom: 25px;
-    position: absolute;
-    left: 0;
-}
-
-.favorIcon {
-    width: 20px;
-    height: 20px;
-    bottom: 35px;
-    position: absolute;
-    right: 20px;
-}
-</style>
 
 <script>
+import firebase from 'firebase';
+import { db } from '../Database';
+
 export default {
     data() {
         return {
-            isHidden: false
+            isHidden: false,
+            user: '',
+            isLoggedIn: false,
+            currentUser: false,
+            addProject: []
+        }
+    },
+    firebase: {
+        addProject: db.ref('addProject')
+    },
+    methods: {
+        deleteItem(key) {
+            this.$firebaseRefs.addProject.child(key).remove();
+        }
+    },
+    created() {
+        if(firebase.auth().currentUser) {
+            this.isLoggedIn = true;
+            this.user = firebase.auth().currentUser.email;
         }
     }
 }

@@ -125,7 +125,7 @@ export default {
                     setTimeout(() => {
                         this.$router.push('/');
                         location.reload();
-                    }, 3000);
+                    }, 2000);
                     this.isHidden = false;
                 },
                 err => {  
@@ -137,7 +137,7 @@ export default {
                 .then(/*eslint-disable-line*/user => {
                     setTimeout(() => {
                         this.$router.push('/');
-                    }, 3000);
+                    }, 2000);
                     this.isHidden = false;
                 },
                 err => {

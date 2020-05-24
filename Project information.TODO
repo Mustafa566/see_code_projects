@@ -1,0 +1,105 @@
+Name:
+See Code Projects
+OR
+Share Code Projects
+
+Description:
+On this project you can publish your projects and share it with other people they can download it and
+share your project ideas and make friends and work togeter on a project. You need a account.
+
+Date:
+☐ 30-04-2020
+
+What we are gonna use:
+- Bootstrap
+- Firebase
+- firebase-admin
+- firebase-functions
+- vue-head
+
+Login methods:
+- Email, Password
+- Google account
+- Github
+
+todo:
+    ✔ Make Vue project @done(20-05-24 03:22)
+    ✔ Make Firebase database @done(20-05-24 03:22)
+    ✔ Make Homepage design in Photoshop @done(20-05-24 03:22)
+    ✔ Make Faq design in Photoshop @done(20-05-24 03:22)
+    ✔ Make Login design in Photoshop @done(20-05-24 03:22)
+    ✔ Make Register design in Photoshop @done(20-05-24 03:22)
+    ✔ Install all packets @done(20-05-24 03:22)
+    ✔ Make a illustrator vector @done(20-05-24 03:22)
+    ✔ Code login page @done(20-05-24 03:22)
+    ✔ Code Register page @done(20-05-24 03:22)
+    ✔ Connect Vue project with Firebase @done(20-05-24 03:22)
+    ✔ Backend register @done(20-05-24 03:22)
+    ✔ Backend login @done(20-05-24 03:22)
+    ✔ Design project page in Photoshop @done(20-05-24 03:22)
+    ✔ Code project page (Without firebase data) @done(20-05-24 03:22)
+    ✔ Favorite img @click done @done(20-05-24 03:22)
+    ✔ Make the icons bigger of the vector @done(20-05-24 03:22)
+    ✔ Make a SUBMIT PROJECT page @done(20-05-24 03:22)
+    ✔ Code submit project page and look for designs on internet @done(20-05-24 03:22)
+    ✔ Make a form and push the information to the Firebase database @done(20-05-24 03:22)
+    ✔ Preview before publishing @done(20-05-24 03:22)
+    ✔ Get data from firebase database on Project page @done(20-05-24 03:22)
+    ✔ Delete button need to work @done(20-05-24 03:22)
+    ✔ Edit button clickable goes to page @done(20-05-24 03:35)
+    ✔ Make edit page @done(20-05-24 04:04)
+
+Layouts:
+    - (Project page) https://flippa.com/search?search_template=most_relevant&beta=t&utm_expid=.z_AMQG6CTwCIkTIKsUlBRg.1&utm_referrer=https:%2F%2Fflippa.com%2Fwebsites&query%5Bkeyword%5D=&filter%5Bsale_method%5D=auction,classified&filter%5Bstatus%5D=open&filter%5Bproperty_type%5D=website,established_website,starter_site,fba,ios_app,android_app
+
+@LATER:
+    ✘ Code homepage page @cancelled(20-04-30 22:30)
+    ✘ Code faq page @cancelled(20-05-04 17:28)
+    ✘ Favorite img @click uid of post (True or false) checkbox @cancelled(20-05-08 18:49)
+    ✘ Button for favorite the post and goes to favorite page (Array push etc) @cancelled(20-05-08 18:44)
+
+@IDEAS:
+    ✘ If uid of user == img @cancelled(20-05-12 00:36)
+
+@today 
+    ✘ More info page and put all the information from the database @cancelled(20-05-24 03:23)
+    ✘ When you register Make profile page @cancelled(20-05-23 22:52)
+        - Username
+        - GitHub username
+        - Profile page
+        - Date when account is created
+    ✘ If you dont have a profile you can't submit a project (not verified) @cancelled(20-05-23 22:54)
+        - Make a variable with verified is null or false if it is true you can submit project.
+    ✘ Make admin account @cancelled(20-05-23 22:57)
+    ✘ When your make a account put the email adress to a array and make a user list for the admin (Maybe the username too) @cancelled(20-05-23 22:59)
+
+
+☐ Can only visit if user is logged in
+```
+<script>
+import firebase from 'firebase';
+export default {
+    data() {
+        return {
+            isLoggedIn: false,
+            currentUser: false,
+            user: ''
+        }
+    },
+    created() {
+        if(firebase.auth().currentUser) {
+            this.isLoggedIn = true;
+            this.user = firebase.auth().currentUser.email;
+        }
+        firebase.auth().onAuthStateChanged(currentUser => {
+            if (currentUser) {
+                this.user = firebase.auth().currentUser.email;
+                this.isLoggedIn = true;
+            } else {
+                this.$router.push('/Login')
+            }
+        });
+    }
+}
+</script>
+```

@@ -191,7 +191,58 @@ $whiteSmoke: #f3f3f3;
 }
 
 /* Project page */
+.sideBar {
+  width: 150px;
+  height: 100vh;
+  border-radius: 30px;
+}
+
+.inputHeight {
+  height: 30px;
+}
+
+.select-standard {
+  width: 100%;
+  border-width: 1px;
+  border-color: #718096;
+  font-size: .875rem;
+  outline: 0;
+  background-color: #fff;
+  border-radius: .125rem;
+}
+
+.cardMain {
+  border: 1px solid black;
+  border-radius: 10px;
+  height: 250px;
+}
+
+.infoCard {
+  position:absolute;
+  bottom: 0;
+}
+
+.float {
+  position:absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.line {
+  width: 100%;
+  height: 3px;
+  background-color: black;
+  bottom: 25px;
+  position: absolute;
+  left: 0;
+}
+
 .favorIcon {
+  width: 20px;
+  height: 20px;
+  bottom: 35px;
+  position: absolute;
+  right: 20px;
   cursor: pointer;
 }
 
@@ -206,4 +257,10 @@ $whiteSmoke: #f3f3f3;
   margin-left: 10%;
 }
 
+.cardMainPreview {
+  border: 1px solid black;
+  border-radius: 10px;
+  height: 250px;
+  margin: 0 auto;
+}
 </style>

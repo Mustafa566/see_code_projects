@@ -1,10 +1,9 @@
 <template>
     <div>
-        <div class="gap"></div>
         <div class="container">
             <h2>Publish project</h2>
             <div class="mainForm pl-5 pr-5 pt-3">
-                <form v-on:submit.prevent="postProject">
+                <form v-on:submit.prevent="updateItem">
                     <!-- Your information -->
                     <div class="row">
                         <h4>Your information</h4>
@@ -187,30 +186,8 @@
                 </div><br>
             </div>
         </div>
-        <!-- <div class="container">
-            <div>
-                <p>Upload an image to Firebase:</p>
-                <input type="file" @change="previewImage" accept="image/*">
-            </div>
-            <div>
-                <p>Progress: {{uploadValue.toFixed() + "%"}}
-                    <progress id="progress" :value="uploadValue" max="100" ></progress>
-                </p>
-            </div>
-            <div v-if="imageData != null">
-                <img class="preview" :src="picture">
-                <br>
-                <button @click="onUpload">Upload</button>
-            </div>
-        </div> -->
     </div>
 </template>
-
-<style>
-img.preview {
-    width: 500px;
-}
-</style>
 
 <script>
 import firebase from 'firebase';
@@ -222,96 +199,43 @@ export default {
             isLoggedIn: false,
             currentUser: false,
             user: '',
-            isHidden: false,
-            projectInfo: {
-                firstName: '',
-                middleName: '',
-                lastName: '',
-                email: '',
-                projectName: '',
-                littleDescription: '',
-                projectType: '',
-                projectHomepage: '',
-                projectDescription: '',
-                videoLink: '',
-                projectBuild: '',
-                uniqueVisitors: '',
-                numberDownloads: '',
-                monthlyRevenue: '',
-                otherStatistics: '',
-                emailId: ''
-            }
-            // imageData: null,
-            // picture: null,
-            // uploadValue: 0
+            projectInfo: {},
+            isHidden: false
         }
     },
     firebase: {
-        addProject: db.ref('addProject')
+        addProject: db.ref('addProject'),
+        itemsObj: {
+            source: db.ref('addProject'),
+            asObject: true
+        }
     },
     methods: {
-        postProject() {
-            if(this.projectInfo.emailId == this.user) {
-                console.log(JSON.stringify(this.projectInfo))
-                this.$firebaseRefs.addProject.push({
-                    firstName: this.projectInfo.firstName,
-                    middleName: this.projectInfo.middleName,
-                    lastName: this.projectInfo.lastName,
-                    email: this.projectInfo.email,
-                    projectName: this.projectInfo.projectName,
-                    littleDescription: this.projectInfo.littleDescription,
-                    projectType: this.projectInfo.projectType,
-                    projectHomepage: this.projectInfo.projectHomepage,
-                    projectDescription: this.projectInfo.projectDescription,
-                    videoLink: this.projectInfo.videoLink,
-                    projectBuild: this.projectInfo.projectBuild,
-                    uniqueVisitors: this.projectInfo.uniqueVisitors,
-                    numberDownloads: this.projectInfo.numberDownloads,
-                    monthlyRevenue: this.projectInfo.monthlyRevenue,
-                    otherStatistics: this.projectInfo.otherStatistics,
-                    emailId: this.projectInfo.emailId
-                })
-                this.projectInfo.firstName = '';
-                this.projectInfo.middleName = '';
-                this.projectInfo.lastName = '';
-                this.projectInfo.email = '';
-                this.projectInfo.projectName = '';
-                this.projectInfo.littleDescription = '';
-                this.projectInfo.projectType = '';
-                this.projectInfo.projectHomepage = '';
-                this.projectInfo.projectDescription = '';
-                this.projectInfo.videoLink = '';
-                this.projectInfo.projectBuild = '';
-                this.projectInfo.uniqueVisitors = '';
-                this.projectInfo.numberDownloads = '';
-                this.projectInfo.monthlyRevenue = '';
-                this.projectInfo.otherStatistics = '';
-                this.projectInfo.emailId = '';
-                this.$router.push('/Projects')
-            } else {
-                alert('Use the same email with this account when you logged in.');
-            }
-        },
-        // previewImage(event) {
-        //     this.uploadValue=0;
-        //     this.picture=null;
-        //     this.imageData = event.target.files[0];
-        // },
-        // onUpload() {
-        //     this.picture = null;
-        //     const storageRef = firebase.storage().ref(`${'Mustafa ' + this.imageData.name}`).put(this.imageData);
-        //     storageRef.on(`state_changed`, snapshot => {
-        //         this.uploadValue = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        //     }, error => {console.log(error.message)},()=> {
-        //         this.uploadValue = 100;
-        //         storageRef.snapshot.ref.getDownloadURL().then((url)=>{
-        //             this.picture = url;
-        //         });
-        //     }
-        //     );
-        // }
+        updateItem() {
+            this.$firebaseRefs.addProject.child(this.$route.params.id).set(this.projectInfo);
+            this.$router.push('/')
+        }
     },
     created() {
+        // let project = this.itemsObj[this.$route.params.id]
+        // this.projectInfo = {
+        //     firstName: project.firstName,
+        //     middleName: project.middleName,
+        //     lastName: project.lastName,
+        //     email: project.email,
+        //     projectName: project.projectName,
+        //     littleDescription: project.littleDescription,
+        //     projectType: project.projectType,
+        //     projectHomepage: project.projectHomepage,
+        //     projectDescription: project.projectDescription,
+        //     videoLink: project.videoLink,
+        //     projectBuild: project.projectBuild,
+        //     uniqueVisitors: project.uniqueVisitors,
+        //     numberDownloads: project.numberDownloads,
+        //     monthlyRevenue: project.monthlyRevenue,
+        //     otherStatistics: project.otherStatistics,
+        //     emailId: project.emailId
+        // }
         if(firebase.auth().currentUser) {
             this.isLoggedIn = true;
             this.user = firebase.auth().currentUser.email;
