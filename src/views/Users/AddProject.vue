@@ -311,7 +311,7 @@ export default {
         //     );
         // }
     },
-    created() {
+    mounted() {
         if(firebase.auth().currentUser) {
             this.isLoggedIn = true;
             this.user = firebase.auth().currentUser.email;

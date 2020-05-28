@@ -7,6 +7,7 @@ import Faq from '../views/Faq.vue'
 import Profile from '../views/Users/Profile.vue'
 import AddProject from '../views/Users/AddProject.vue'
 import EditItem from '../views/Users/EditItem.vue'
+import ProjectDetails from '../views/ProjectDetails.vue'
 import '../Database'
 
 Vue.use(VueRouter)
@@ -21,6 +22,11 @@ Vue.use(VueRouter)
     path: '/Projects',
     name: 'Projects',
     component: Projects
+  },
+  {
+    path: '/ProjectDetails/:id',
+    name: 'ProjectDetails',
+    component: ProjectDetails
   },
   {
     path: '/Faq',

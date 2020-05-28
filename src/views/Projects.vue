@@ -57,7 +57,9 @@
                             <div class="col">
                                 <p class="float-left">Date</p>
                             </div>
-                            <p class="redText">More info</p>
+                            <router-link :to="{ name: 'ProjectDetails', params: {id: project['.key']} }" class="underLine">
+                                <p class="redText underLine">More info</p>
+                            </router-link>
                         </div>
                         <div class="col ml-0">
                             <h5 class="redText">{{project.projectName}}</h5>
@@ -69,14 +71,16 @@
                             <img src="@/assets/Icons/blackStar.png" class="favorIcon" @click="isHidden = !isHidden">
                             <img src="@/assets/Icons/star.png" class="favorIcon" v-if="isHidden" @click="isHidden = !isHidden">
                             <span class="infoCard float mr-4">{{project.emailId}}</span>
-                            <div class="col-xs-1">
-                                <button @click="deleteItem(project['.key'])" class="btn btn-danger">Delete</button>
-                            </div>
-                            <div class="col-xs-1">
-                                <router-link :to="{ name: 'Edit', params: {id: project['.key']} }" class="btn btn-warning">
-                                    Edit
-                                </router-link>
-                            </div>
+                                <div v-if="isLoggedIn == true">
+                                    <div class="col-xs-1">
+                                        <button @click="deleteItem(project['.key'])" class="btn btn-danger">Delete</button>
+                                    </div>
+                                    <div class="col-xs-1">
+                                        <router-link :to="{ name: 'Edit', params: {id: project['.key']} }" class="btn btn-warning">
+                                            Edit
+                                        </router-link>
+                                    </div>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -108,7 +112,7 @@ export default {
             this.$firebaseRefs.addProject.child(key).remove();
         }
     },
-    created() {
+    mounted() {
         if(firebase.auth().currentUser) {
             this.isLoggedIn = true;
             this.user = firebase.auth().currentUser.email;

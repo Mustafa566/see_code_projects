@@ -42,7 +42,7 @@ export default {
       })
     }
   },
-  created() {
+  mounted() {
     if(firebase.auth().currentUser) {
       this.isLoggedIn = true;
       this.user = firebase.auth().currentUser.email;
@@ -105,6 +105,11 @@ $whiteSmoke: #f3f3f3;
 
 .pointer {
   cursor: pointer;
+}
+
+.underLine:hover {
+  text-decoration: none;
+  color: $darkbluecolor;
 }
 
 /* Nav */
@@ -217,6 +222,11 @@ $whiteSmoke: #f3f3f3;
   height: 250px;
 }
 
+.cardMain:hover {
+  box-shadow: 0 10px 10px #a7a7a7;
+  margin-top: -10px;
+}
+
 .infoCard {
   position:absolute;
   bottom: 0;
@@ -263,4 +273,7 @@ $whiteSmoke: #f3f3f3;
   height: 250px;
   margin: 0 auto;
 }
+
+/* Project details */
+
 </style>

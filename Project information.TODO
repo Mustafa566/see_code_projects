@@ -53,16 +53,17 @@ Layouts:
     - (Project page) https://flippa.com/search?search_template=most_relevant&beta=t&utm_expid=.z_AMQG6CTwCIkTIKsUlBRg.1&utm_referrer=https:%2F%2Fflippa.com%2Fwebsites&query%5Bkeyword%5D=&filter%5Bsale_method%5D=auction,classified&filter%5Bstatus%5D=open&filter%5Bproperty_type%5D=website,established_website,starter_site,fba,ios_app,android_app
 
 @LATER:
-    ✘ Code homepage page @cancelled(20-04-30 22:30)
+    ✘ Recode homepage page @cancelled(20-04-30 22:30)
     ✘ Code faq page @cancelled(20-05-04 17:28)
     ✘ Favorite img @click uid of post (True or false) checkbox @cancelled(20-05-08 18:49)
     ✘ Button for favorite the post and goes to favorite page (Array push etc) @cancelled(20-05-08 18:44)
+    ✘ Make admin account @cancelled(20-05-23 22:57)
 
 @IDEAS:
-    ✘ If uid of user == img @cancelled(20-05-12 00:36)
+    ✘ Profile picture @cancelled(20-05-28 17:14)
 
 @today 
-    ✘ More info page and put all the information from the database @cancelled(20-05-24 03:23)
+    ✘ @WORKING More info page and put all the information from the database @cancelled(20-05-24 03:23)
     ✘ When you register Make profile page @cancelled(20-05-23 22:52)
         - Username
         - GitHub username
@@ -70,9 +71,9 @@ Layouts:
         - Date when account is created
     ✘ If you dont have a profile you can't submit a project (not verified) @cancelled(20-05-23 22:54)
         - Make a variable with verified is null or false if it is true you can submit project.
-    ✘ Make admin account @cancelled(20-05-23 22:57)
+    ✘ Add Register USERNAME input require @cancelled(20-05-28 17:17)
+    ✘ Push email and username on a apart table @cancelled(20-05-28 17:16)
     ✘ When your make a account put the email adress to a array and make a user list for the admin (Maybe the username too) @cancelled(20-05-23 22:59)
-
 
 ☐ Can only visit if user is logged in
 ```
@@ -86,7 +87,7 @@ export default {
             user: ''
         }
     },
-    created() {
+    mounted() {
         if(firebase.auth().currentUser) {
             this.isLoggedIn = true;
             this.user = firebase.auth().currentUser.email;

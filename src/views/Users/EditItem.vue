@@ -216,7 +216,7 @@ export default {
             this.$router.push('/')
         }
     },
-    created() {
+    mounted() {
         // let project = this.itemsObj[this.$route.params.id]
         // this.projectInfo = {
         //     firstName: project.firstName,
