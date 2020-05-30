@@ -51,7 +51,8 @@ export default {
       if (currentUser) {
         this.user = firebase.auth().currentUser.email;
         this.isLoggedIn = true;
-        console.log(this.user + ' ' + this.isLoggedIn);
+        console.log(this.user);
+        console.log(this.isLoggedIn);
       } else {
         console.log('no user'); 
       }

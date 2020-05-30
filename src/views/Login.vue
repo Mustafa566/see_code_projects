@@ -107,7 +107,7 @@ svg path, svg rect{
 
 <script>
 import firebase from 'firebase';
-import '../Database';
+import { db } from '../Database';
 
 export default {
     data() {
@@ -115,18 +115,27 @@ export default {
             seen: true,
             isHidden: true,
             email: '',
-            password: ''
+            password: '',
+            username: '',
+            userId: null
         }
+    },
+    firebase: {
+        users: db.ref('users')
     },
     methods: {
        register() {
             firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
                 .then(/*eslint-disable-line*/user => {
                     setTimeout(() => {
-                        this.$router.push('/');
+                        this.$router.push('CreateProfile');
                         location.reload();
                     }, 2000);
-                    this.isHidden = false;
+                    this.$firebaseRefs.users.push({
+                        email: this.email,
+                        username: this.username,
+                        userId: firebase.auth().currentUser.uid
+                    })
                 },
                 err => {  
                     alert(err.message);

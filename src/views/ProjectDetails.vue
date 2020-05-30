@@ -5,17 +5,41 @@
             <div v-if="project['.key'] == route">
                 <h1 class="redText">{{project.projectName}}</h1>
                 <span>{{ new Date() | moment("dddd, MMMM Do YYYY") }}</span>
-                <p class="mt-4">{{project.projectHomepage}}</p>
-                <div class="mt-4 vistors">
-                    <p>Unique vistors: <strong>{{project.uniqueVisitors}}</strong></p>
-                    <p>Number downloads: <strong>{{project.numberDownloads}}</strong></p>
-                    <p>Monthly Revenue: <strong>{{project.monthlyRevenue}}</strong></p>
-                    <strong>{{project.otherStatistics}}</strong>
+
+                <h5 class="mt-5">Type</h5>
+                <p>{{project.projectType}}</p>
+
+                <p v-if="project.projectHomepage != null">{{project.projectHomepage}}</p>
+                <div class="mt-4 vistors" 
+                    v-if="
+                    project.uniqueVisitors != null && 
+                    project.numberDownloads != null && 
+                    project.monthlyRevenue != null && 
+                    project.otherStatistics != null">
+                    <p v-if="project.uniqueVisitors != null">Unique vistors: <strong>{{project.uniqueVisitors}}</strong></p>
+                    <p v-if="project.numberDownloads != null">Number downloads: <strong>{{project.numberDownloads}}</strong></p>
+                    <p v-if="project.monthlyRevenue != null">Monthly Revenue: <strong>{{project.monthlyRevenue}}</strong></p>
+                    <strong v-if="project.otherStatistics != null">{{project.otherStatistics}}</strong>
                 </div>
                 <div class="littleDescription pl-1 mt-5">
+                    <h5>Short description about project</h5>
                     <p>{{project.littleDescription}}</p>
                 </div>
-                <p class="mt-3">{{project.projectDescription}}</p>
+                <h5 class="mt-5">Project description</h5>
+                <p>{{project.projectDescription}}</p>
+
+                <h5 class="mt-5" v-if="project.projectBuild != null">How project was build</h5>
+                <p>{{project.projectBuild}}</p>
+                
+                <h5 class="mt-5" v-if="project.videoLink != null">Video of project</h5>
+                <p>{{project.videoLink}}</p>
+
+                <h5 class="mt-5">Owner</h5>
+                <div class="row ml-0">
+                    <p>{{project.firstName}}</p>
+                    <p class="ml-2" v-if="project.middleName != null">{{project.middleName}}</p>
+                    <p class="ml-2">{{project.lastName}}</p>
+                </div>
             </div>
         </div>
     </div>
@@ -60,17 +84,17 @@ export default {
         //     middleName: project.middleName,
         //     lastName: project.lastName,
         //     email: project.email,
-        //     projectName: project.projectName, // gedaan
-        //     littleDescription: project.littleDescription, // gedaan
-        //     projectType: project.projectType,
-        //     projectHomepage: project.projectHomepage, // gedaan
-        //     projectDescription: project.projectDescription, // gedaan
+        //     projectName: project.projectName,  
+        //     littleDescription: project.littleDescription,  
+        //     projectType: project.projectType,  
+        //     projectHomepage: project.projectHomepage,  
+        //     projectDescription: project.projectDescription,  
         //     videoLink: project.videoLink,
-        //     projectBuild: project.projectBuild,
-        //     uniqueVisitors: project.uniqueVisitors, // gedaan
-        //     numberDownloads: project.numberDownloads, // gedaan
-        //     monthlyRevenue: project.monthlyRevenue, // gedaan
-        //     otherStatistics: project.otherStatistics,
+        //     projectBuild: project.projectBuild,  
+        //     uniqueVisitors: project.uniqueVisitors,  
+        //     numberDownloads: project.numberDownloads,  
+        //     monthlyRevenue: project.monthlyRevenue,  
+        //     otherStatistics: project.otherStatistics,  
         //     emailId: project.emailId
         // }
         if(firebase.auth().currentUser) {

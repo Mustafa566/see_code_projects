@@ -7,6 +7,7 @@ import Faq from '../views/Faq.vue'
 import Profile from '../views/Users/Profile.vue'
 import AddProject from '../views/Users/AddProject.vue'
 import EditItem from '../views/Users/EditItem.vue'
+import CreateProfile from '../views/Users/CreateProfile.vue'
 import ProjectDetails from '../views/ProjectDetails.vue'
 import '../Database'
 
@@ -37,6 +38,11 @@ Vue.use(VueRouter)
     path: '/Login',
     name: 'Login',
     component: Login
+  },
+  {
+    path: '/CreateProfile',
+    name: 'CreateProfile',
+    component: CreateProfile
   },
   {
     path: '/Profile',

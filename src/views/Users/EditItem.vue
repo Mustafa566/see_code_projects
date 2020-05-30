@@ -1,7 +1,8 @@
 <template>
     <div>
+        <div class="gap"></div>
         <div class="container">
-            <h2>Publish project</h2>
+            <h2>Edit project</h2>
             <div class="mainForm pl-5 pr-5 pt-3">
                 <form v-on:submit.prevent="updateItem">
                     <!-- Your information -->
