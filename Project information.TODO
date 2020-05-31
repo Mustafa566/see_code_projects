@@ -50,6 +50,15 @@ todo:
     ✔ Make edit page @done(20-05-29 13:34)
     ✔ More info page and put all the information from the database @done(20-05-30 20:08)
     ✔ Push email and username on a apart table @done(20-05-30 21:07)
+    ✔ When you register go to create profile page @done(20-05-31 22:34)
+        - Your slogan
+        - GitHub username
+        - Facebook URL
+        - Instagram URL
+        - Twitter URL
+        - Linkedin URL
+        - Website URL
+    ✔ All the data from the create profile page is going to the database @done(20-05-31 22:34)
 
 Layouts:
     - (Project page) https://flippa.com/search?search_template=most_relevant&beta=t&utm_expid=.z_AMQG6CTwCIkTIKsUlBRg.1&utm_referrer=https:%2F%2Fflippa.com%2Fwebsites&query%5Bkeyword%5D=&filter%5Bsale_method%5D=auction,classified&filter%5Bstatus%5D=open&filter%5Bproperty_type%5D=website,established_website,starter_site,fba,ios_app,android_app
@@ -65,15 +74,7 @@ Layouts:
     ✘ Profile picture @cancelled(20-05-28 17:14)
 
 @today 
-    ✘ @WORKING When you register go to create profile page @cancelled(20-05-23 22:52)
-        - Your slogan
-        - GitHub username
-        - Facebook URL
-        - Instagram URL
-        - Twitter URL
-        - Linkedin URL
-        - Website URL
-        - Design (https://miro.medium.com/max/1600/1*3k_OAbqN2OmbNSNh_IHKpA.png)
+    ✘ Can't push the currentuser to the database @cancelled(20-05-31 23:45)
     ✘ If you dont have a profile you can't submit a project (not verified) @cancelled(20-05-23 22:54)
         - Make a variable with verified is null or false if it is true you can submit project.
     ✘ Add Register page USERNAME input require @cancelled(20-05-28 17:17)
@@ -82,6 +83,8 @@ Layouts:
         - Date when account is created
         - Design (https://miro.medium.com/max/1600/1*3k_OAbqN2OmbNSNh_IHKpA.png)
 
+
+        
 ☐ Can only visit if user is logged in
 ```
 <script>

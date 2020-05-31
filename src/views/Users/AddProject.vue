@@ -271,22 +271,22 @@ export default {
                     otherStatistics: this.projectInfo.otherStatistics,
                     emailId: this.projectInfo.emailId
                 })
-                this.projectInfo.firstName = '';
-                this.projectInfo.middleName = '';
-                this.projectInfo.lastName = '';
-                this.projectInfo.email = '';
-                this.projectInfo.projectName = '';
-                this.projectInfo.littleDescription = '';
-                this.projectInfo.projectType = '';
-                this.projectInfo.projectHomepage = '';
-                this.projectInfo.projectDescription = '';
-                this.projectInfo.videoLink = '';
-                this.projectInfo.projectBuild = '';
-                this.projectInfo.uniqueVisitors = '';
-                this.projectInfo.numberDownloads = '';
-                this.projectInfo.monthlyRevenue = '';
-                this.projectInfo.otherStatistics = '';
-                this.projectInfo.emailId = '';
+                // this.projectInfo.firstName = '';
+                // this.projectInfo.middleName = '';
+                // this.projectInfo.lastName = '';
+                // this.projectInfo.email = '';
+                // this.projectInfo.projectName = '';
+                // this.projectInfo.littleDescription = '';
+                // this.projectInfo.projectType = '';
+                // this.projectInfo.projectHomepage = '';
+                // this.projectInfo.projectDescription = '';
+                // this.projectInfo.videoLink = '';
+                // this.projectInfo.projectBuild = '';
+                // this.projectInfo.uniqueVisitors = '';
+                // this.projectInfo.numberDownloads = '';
+                // this.projectInfo.monthlyRevenue = '';
+                // this.projectInfo.otherStatistics = '';
+                // this.projectInfo.emailId = '';
                 this.$router.push('/Projects')
             } else {
                 alert('Use the same email with this account when you logged in.');
