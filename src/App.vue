@@ -2,10 +2,13 @@
   <div id="app">
     <nav class="navbar navColor navHide">
       <router-link :to="{ name: 'Index' }" class="navbar-brand headerText">See Code Projects</router-link>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button>
-      <p class="whiteText">{{user}}</p>
+      </button> -->
+      <p class="whiteText verified">{{user}}</p>
+      <div v-for="profile of userProfile" :key="profile['.key']">
+        <p class="whiteText verified" v-if="profile.emailId == user">{{profile.verified}} verified</p>
+      </div>
       <ul class="nav justify-content-end">
         <router-link :to="{ name: 'Projects' }" class="nav-link headerSubText mr-5">Projects</router-link>
         <router-link :to="{ name: 'Faq' }" class="nav-link headerSubText mr-5">FAQ</router-link>
@@ -26,13 +29,20 @@
 
 <script>
 import firebase from 'firebase';
+import { db } from './Database';
+
 export default {
   data() {
     return {
       isLoggedIn: false,
       currentUser: false,
-      user: ''
+      user: '',
+      verified: false,
+      userProfile: []
     }
+  },
+  firebase: {
+    userProfile: db.ref('userProfile')
   },
   methods: {
     logout() {
@@ -71,6 +81,12 @@ $font: 'Righteous', cursive;
 $whiteSmoke: #f3f3f3;
 
 /* Stardart class */
+
+.form-control:focus {
+  box-shadow: none;
+  background-color: $white;
+  border-color: $darkbluecolor;
+}
 
 .redText {
   color: $redcolor;
@@ -134,6 +150,12 @@ $whiteSmoke: #f3f3f3;
 .headerSubText:hover, .headerSubText:active, .headerSubText:focus {
   background-color: $redcolor;
   border-radius: 20px;
+}
+
+.verified {
+  position: absolute;
+  left: 40% !important;
+  padding-bottom: 20px;
 }
 
 /* Index.vue */
@@ -257,6 +279,12 @@ $whiteSmoke: #f3f3f3;
   cursor: pointer;
 }
 
+.borderMoreInfo {
+  background-color: $redcolor;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 15px;
+}
 
 /* Add project page */
 .mainForm {

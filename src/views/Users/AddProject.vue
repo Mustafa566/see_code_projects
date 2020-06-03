@@ -186,31 +186,10 @@
                     </div>
                 </div><br>
             </div>
+        
         </div>
-        <!-- <div class="container">
-            <div>
-                <p>Upload an image to Firebase:</p>
-                <input type="file" @change="previewImage" accept="image/*">
-            </div>
-            <div>
-                <p>Progress: {{uploadValue.toFixed() + "%"}}
-                    <progress id="progress" :value="uploadValue" max="100" ></progress>
-                </p>
-            </div>
-            <div v-if="imageData != null">
-                <img class="preview" :src="picture">
-                <br>
-                <button @click="onUpload">Upload</button>
-            </div>
-        </div> -->
     </div>
 </template>
-
-<style>
-img.preview {
-    width: 500px;
-}
-</style>
 
 <script>
 import firebase from 'firebase';
@@ -241,9 +220,6 @@ export default {
                 otherStatistics: '',
                 emailId: ''
             }
-            // imageData: null,
-            // picture: null,
-            // uploadValue: 0
         }
     },
     firebase: {
@@ -271,45 +247,11 @@ export default {
                     otherStatistics: this.projectInfo.otherStatistics,
                     emailId: this.projectInfo.emailId
                 })
-                // this.projectInfo.firstName = '';
-                // this.projectInfo.middleName = '';
-                // this.projectInfo.lastName = '';
-                // this.projectInfo.email = '';
-                // this.projectInfo.projectName = '';
-                // this.projectInfo.littleDescription = '';
-                // this.projectInfo.projectType = '';
-                // this.projectInfo.projectHomepage = '';
-                // this.projectInfo.projectDescription = '';
-                // this.projectInfo.videoLink = '';
-                // this.projectInfo.projectBuild = '';
-                // this.projectInfo.uniqueVisitors = '';
-                // this.projectInfo.numberDownloads = '';
-                // this.projectInfo.monthlyRevenue = '';
-                // this.projectInfo.otherStatistics = '';
-                // this.projectInfo.emailId = '';
                 this.$router.push('/Projects')
             } else {
                 alert('Use the same email with this account when you logged in.');
             }
-        },
-        // previewImage(event) {
-        //     this.uploadValue=0;
-        //     this.picture=null;
-        //     this.imageData = event.target.files[0];
-        // },
-        // onUpload() {
-        //     this.picture = null;
-        //     const storageRef = firebase.storage().ref(`${'Mustafa ' + this.imageData.name}`).put(this.imageData);
-        //     storageRef.on(`state_changed`, snapshot => {
-        //         this.uploadValue = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        //     }, error => {console.log(error.message)},()=> {
-        //         this.uploadValue = 100;
-        //         storageRef.snapshot.ref.getDownloadURL().then((url)=>{
-        //             this.picture = url;
-        //         });
-        //     }
-        //     );
-        // }
+        }
     },
     mounted() {
         if(firebase.auth().currentUser) {
@@ -322,6 +264,13 @@ export default {
                 this.isLoggedIn = true;
             } else {
                 this.$router.push('/Login')
+            }
+
+            if(this.verified == true) {
+                this.user = firebase.auth().currentUser.email;
+                this.isLoggedIn = true;
+            } else {
+                // this.$router.push('/Profile')
             }
         });
     }

@@ -9,6 +9,7 @@
                         <h4 class="text-center">Fill your profile in.</h4>
                     </div>
                 </div>
+            <div class="gap"></div>
                 <!--  -->
             <form v-on:submit.prevent="postProfileInfo">
                 <div class="row mb-4">
@@ -159,8 +160,8 @@
                     <div class="col-md-4">
                         <h6 class="mt-2 float-right">Country *</h6>
                     </div>
-                    <div class="col-md-3">
-                        <select class="custom-select inputRadius" v-model="profileInfo.country" required>
+                    <div class="col-md">
+                        <select class="custom-select inputRadius inputWidth" v-model="profileInfo.country" required>
                             <option value="Afganistan">Afghanistan</option>
                             <option value="Albania">Albania</option>
                             <option value="Algeria">Algeria</option>
@@ -519,21 +520,30 @@
                         </div>
                     </div>
                     <!--  -->
-                    <div class="row mb-4 mt-4">
-                        <div class="col-md-4">
-                            <h6 class="float-right">Is this your email: {{this.user}} ?</h6>
+                    <div class="row mb-4">
+                        <div class="col-md-4 mt-2">
+                            <h6 class="float-right">Type this email: {{this.user}} *</h6>
                         </div>
                         <div class="col-md">
-                            <input type="checkbox" v-model="profileInfo.emailId" required>
+                            <input 
+                            type="text" 
+                            class="float-left form-control inputLinks mt-1" 
+                            v-model="profileInfo.emailId" 
+                            placeholder="Type here the same email"
+                            required>
                         </div>
                     </div>
                     <!--  -->
                     <div class="row mb-4 mt-4">
                         <div class="col-md-4">
-                            <h6 class="float-right">Are you a robot ?</h6>
+                            <input 
+                            type="checkbox" 
+                            class="float-right mt-1" 
+                            v-model="profileInfo.verified" 
+                            required>
                         </div>
                         <div class="col-md">
-                            <input type="checkbox" v-model="profileInfo.verified" required>
+                            <h6 class="float-left">Are you a robot ?</h6>
                         </div>
                     </div>
                 </div>
@@ -587,7 +597,7 @@ export default {
                 twitter: '',
                 linkedin: '',
                 personalWebsite: '',
-                emailId: this.user,
+                emailId: '',
                 verified: false
             }
         }
@@ -598,28 +608,33 @@ export default {
     methods: {
         postProfileInfo() {
             this.verified = true;
-            if(firebase.auth().currentUser.email == this.user) {
-                console.log(JSON.stringify(this.profileInfo));
-                this.$firebaseRefs.userProfile.push({
-                    fullName: this.profileInfo.fullName,
-                    bio: this.profileInfo.bio,
-                    slogan: this.profileInfo.slogan,
-                    birthdayDay: this.profileInfo.birthdayDay,
-                    birthdayMonth: this.profileInfo.birthdayMonth,
-                    birthdayYear: this.profileInfo.birthdayYear,
-                    country: this.profileInfo.country,
-                    stateProvinceRegion: this.profileInfo.stateProvinceRegion,
-                    github: this.profileInfo.github,
-                    facebook: this.profileInfo.facebook,
-                    instagram: this.profileInfo.instagram,
-                    twitter: this.profileInfo.twitter,
-                    linkedin: this.profileInfo.linkedin,
-                    personalWebsite: this.profileInfo.personalWebsite,
-                    emailId: this.profileInfo.emailId,
-                    verified: this.profileInfo.verified
-                })
-                // this.$router.push('/Profile')
-                // location.reload();
+            if (firebase.auth().currentUser.email == this.user) {
+                console.log('User email is the same');
+                if (this.user == this.profileInfo.emailId) {
+                    console.log(JSON.stringify(this.profileInfo));
+                    this.$firebaseRefs.userProfile.push({
+                        fullName: this.profileInfo.fullName,
+                        bio: this.profileInfo.bio,
+                        slogan: this.profileInfo.slogan,
+                        birthdayDay: this.profileInfo.birthdayDay,
+                        birthdayMonth: this.profileInfo.birthdayMonth,
+                        birthdayYear: this.profileInfo.birthdayYear,
+                        country: this.profileInfo.country,
+                        stateProvinceRegion: this.profileInfo.stateProvinceRegion,
+                        github: this.profileInfo.github,
+                        facebook: this.profileInfo.facebook,
+                        instagram: this.profileInfo.instagram,
+                        twitter: this.profileInfo.twitter,
+                        linkedin: this.profileInfo.linkedin,
+                        personalWebsite: this.profileInfo.personalWebsite,
+                        emailId: this.profileInfo.emailId,
+                        verified: this.profileInfo.verified
+                    })
+                    this.$router.push('/Profile')
+                    location.reload();
+                } else {
+                    alert('Email is not the same');
+                }
             }
         }
     },

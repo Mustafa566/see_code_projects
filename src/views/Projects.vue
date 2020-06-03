@@ -58,7 +58,7 @@
                                 <p class="float-left">Date</p>
                             </div>
                             <router-link :to="{ name: 'ProjectDetails', params: {id: project['.key']} }" class="underLine">
-                                <p class="redText underLine">More info</p>
+                                <p class="whiteText underLine borderMoreInfo">More info</p>
                             </router-link>
                         </div>
                         <div class="col ml-0">
