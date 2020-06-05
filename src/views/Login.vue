@@ -59,6 +59,12 @@
                 <h3 class="text-center redText mt-5">Register</h3>
                 <div class="row mt-5">
                     <div class="col">
+                        <input type="text" class="form-control w-75 horizonCenter" placeholder="Username *" v-model="username" required>
+                    </div>
+                </div>
+                
+                <div class="row mt-5">
+                    <div class="col">
                         <input type="text" class="form-control w-75 horizonCenter" placeholder="Email *" v-model="email" required>
                     </div>
                 </div>
@@ -68,12 +74,12 @@
                         <input type="password" class="form-control w-75 horizonCenter" placeholder="Password *" v-model="password" required>
                     </div>
                 </div>
-                <div class="row mt-5 mr-5 float-right">
+                <div class="row mt-4 mr-5 float-right">
                     <div class="col">
                         <button type="button" class="btn redBackGround whiteText" @click="register">Register</button>
                     </div>
                 </div>
-                <div class="row mt-5 ml-5">
+                <div class="row mt-2 ml-5">
                     <div class="col">
                         <div v-if="!isHidden" class="loader loader--style3" title="2">
                             <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -109,6 +115,13 @@ svg path, svg rect{
 import firebase from 'firebase';
 import { db } from '../Database';
 
+var d = new Date();
+var day = d.getDate();
+var month = d.getMonth() + 1;
+var year = d.getFullYear();
+
+var date = day + '-' + month + '-' + year
+
 export default {
     data() {
         return {
@@ -134,7 +147,8 @@ export default {
                     this.$firebaseRefs.users.push({
                         email: this.email,
                         username: this.username,
-                        userId: firebase.auth().currentUser.uid
+                        userId: firebase.auth().currentUser.uid,
+                        createdAt: date
                     })
                 },
                 err => {  

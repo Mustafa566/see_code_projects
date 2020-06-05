@@ -1,6 +1,7 @@
 <template>
     <div>
         <div class="gap"></div>
+        <router-link :to="{ name: 'Projects' }" class="btn darkBlueBackGround whiteText redHover ml-5">Go back</router-link>
         <div class="container">
             <h2>Edit project</h2>
             <div class="mainForm pl-5 pr-5 pt-3">

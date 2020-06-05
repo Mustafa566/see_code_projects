@@ -5,15 +5,20 @@
       <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button> -->
-      <p class="whiteText verified">{{user}}</p>
-      <div v-for="profile of userProfile" :key="profile['.key']">
-        <p class="whiteText verified" v-if="profile.emailId == user">{{profile.verified}} verified</p>
-      </div>
       <ul class="nav justify-content-end">
         <router-link :to="{ name: 'Projects' }" class="nav-link headerSubText mr-5">Projects</router-link>
         <router-link :to="{ name: 'Faq' }" class="nav-link headerSubText mr-5">FAQ</router-link>
         <router-link :to="{ name: 'Login' }" class="nav-link headerSubText" v-if="!isLoggedIn">Login</router-link>
-        <router-link :to="{ name: 'Profile' }" class="nav-link headerSubText mr-5" v-if="isLoggedIn">Profile</router-link>
+          <div v-for="profile of userProfile" :key="profile['.key']">
+            <p class="whiteText a verified" v-if="profile.emailId == user">{{profile.verified}} verified</p>
+          </div>
+        <div class="display">
+          <router-link :to="{ name: 'Profile' }" class="nav-link headerSubText mr-5" v-if="isLoggedIn">Profile</router-link>
+          <div class="dropdown-content">
+            <p class="whiteText a verified">{{user}}</p>
+          </div>
+        </div>
+
         <router-link :to="{ name: 'AddProject' }" class="nav-link headerSubText mr-5" v-if="isLoggedIn">Add project</router-link>
         <div class="nav-link headerSubText pointer" @click="logout" v-if="isLoggedIn">Logout</div>
       </ul>
@@ -50,6 +55,11 @@ export default {
         this.$router.push('/Login')
         location.reload();
       })
+    }
+  },
+  watch: {
+    userProfile(newValue){
+      console.log(newValue)
     }
   },
   mounted() {
@@ -112,6 +122,10 @@ $whiteSmoke: #f3f3f3;
   background-color: $darkbluecolor;
 }
 
+.redHover:hover {
+  color: $redcolor;
+}
+
 .horizonCenter {
   margin: 0 auto;
 }
@@ -130,6 +144,35 @@ $whiteSmoke: #f3f3f3;
 }
 
 /* Nav */
+.display {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content .a {
+  color: $redcolor;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  background-color: $darkbluecolor;
+  border: 3px solid $redcolor;
+  border-radius: 30px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  top: 50px;
+  right: 70px;
+}
+
+.display:hover .dropdown-content {
+  display: block;
+}
+
 .navColor {
   background-color: $darkbluecolor;
   height: 120px;
