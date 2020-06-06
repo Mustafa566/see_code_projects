@@ -79,9 +79,14 @@ todo:
 
 @today 
     ✘ @Waiting Check if currentUser is verified @cancelled(20-06-03 01:45)
-    ✘ Profile page @cancelled(20-05-31 01:20)
-        - Date when account is created
+    ✘ Find design of forgot password page @cancelled(20-06-06 21:17)
+    ✘ Code forgot password page @cancelled(20-06-06 21:17)
+    ✘ Make send email function @cancelled(20-06-06 21:18)
+    ✘ Code profile page @cancelled(20-05-31 01:20)
         - Design (https://miro.medium.com/max/1600/1*3k_OAbqN2OmbNSNh_IHKpA.png)
+    ✘ Show username | email @cancelled(20-06-06 21:15)
+    ✘ Show user profile @cancelled(20-06-06 21:16)
+    ✘ Change password @cancelled(20-06-06 21:16)
 
 
         

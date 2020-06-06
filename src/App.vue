@@ -124,6 +124,7 @@ $whiteSmoke: #f3f3f3;
 
 .redHover:hover {
   color: $redcolor;
+  text-decoration: none;
 }
 
 .horizonCenter {

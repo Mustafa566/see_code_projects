@@ -20,7 +20,7 @@
                 </div>
                 <div class="row mt-1 ml-5">
                     <div class="col">
-                        <p class="redText">Forgot my password</p>
+                        <router-link :to="{ name: 'ForgotPassword' }" class="redText redHover">Forgot my password</router-link>
                     </div>
                 </div>
                 <div class="row mt-2 mr-5 float-right">

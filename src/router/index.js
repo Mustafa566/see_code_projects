@@ -9,6 +9,7 @@ import AddProject from '../views/Users/AddProject.vue'
 import EditItem from '../views/Users/EditItem.vue'
 import CreateProfile from '../views/Users/CreateProfile.vue'
 import ProjectDetails from '../views/ProjectDetails.vue'
+import ForgotPassword from '../views/ForgotPassword.vue'
 import '../Database'
 
 Vue.use(VueRouter)
@@ -38,6 +39,11 @@ Vue.use(VueRouter)
     path: '/Login',
     name: 'Login',
     component: Login
+  },
+  {
+    path: '/ForgotPassword',
+    name: 'ForgotPassword',
+    component: ForgotPassword
   },
   {
     path: '/CreateProfile',
