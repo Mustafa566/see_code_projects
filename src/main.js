@@ -5,7 +5,6 @@ import 'bootstrap'
 import { rtdbPlugin } from 'vuefire'
 
 Vue.use(rtdbPlugin)
-Vue.use(require('vue-moment'));
 
 Vue.config.productionTip = false
 

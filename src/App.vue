@@ -57,11 +57,11 @@ export default {
       })
     }
   },
-  watch: {
-    userProfile(newValue){
-      console.log(newValue)
-    }
-  },
+  // watch: {
+  //   userProfile(newValue){
+  //     console.log(newValue)
+  //   }
+  // },
   mounted() {
     if(firebase.auth().currentUser) {
       this.isLoggedIn = true;
@@ -71,8 +71,8 @@ export default {
       if (currentUser) {
         this.user = firebase.auth().currentUser.email;
         this.isLoggedIn = true;
-        console.log(this.user);
-        console.log(this.isLoggedIn);
+        // console.log(this.user);
+        // console.log(this.isLoggedIn);
       } else {
         console.log('no user'); 
       }
@@ -90,7 +90,7 @@ $white: #fff;
 $font: 'Righteous', cursive;
 $whiteSmoke: #f3f3f3;
 
-/* Stardart class */
+/* stardart class */
 
 .form-control:focus {
   box-shadow: none;
@@ -144,7 +144,7 @@ $whiteSmoke: #f3f3f3;
   color: $darkbluecolor;
 }
 
-/* Nav */
+/* nav */
 .display {
   position: relative;
   display: inline-block;
@@ -180,7 +180,7 @@ $whiteSmoke: #f3f3f3;
 }
 
 .headerText, .headerText:hover {
-  color: $white;
+  color: $redcolor;
   font-family: $font;
   font-size: 28px;
 }
@@ -202,7 +202,7 @@ $whiteSmoke: #f3f3f3;
   padding-bottom: 20px;
 }
 
-/* Index.vue */
+/* index.vue */
 .wave {
   background-color: $darkbluecolor;
   height: 400px;
@@ -246,7 +246,7 @@ $whiteSmoke: #f3f3f3;
   overflow-x: hidden;
 }
 
-/* Login page */
+/* login page */
 .loginMain {
   width: 500px;
   height: 500px;
@@ -262,7 +262,7 @@ $whiteSmoke: #f3f3f3;
   border-radius: 30px 30px 0px 0px;
 }
 
-/* Project page */
+/* project page */
 .sideBar {
   width: 150px;
   height: 100vh;
@@ -330,7 +330,12 @@ $whiteSmoke: #f3f3f3;
   border-radius: 15px;
 }
 
-/* Add project page */
+.deleteBtn, .editBtn {
+  width: 25px;
+  height: 25px;
+}
+
+/* add project page */
 .mainForm {
   background-color: $whiteSmoke;
   border-radius: 20px;
@@ -347,6 +352,55 @@ $whiteSmoke: #f3f3f3;
   margin: 0 auto;
 }
 
-/* Project details */
+/* project details */
+.littleDescription {
+    background-color: #e4e4e4;
+    max-width: 500px;
+}
 
+.vistors {
+    border: 1px solid lightgray;
+    max-width: 400px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+/* forgot password */
+.box {
+    background-color: #f8f9fd;
+    box-shadow: 0px 15px 15px 0px rgb(70, 70, 70);
+}
+
+/* profile */
+.div {
+    overflow-x: hidden;
+}
+
+.lines {
+    background-color: lightgray;
+    height: 1px;
+}
+
+.icons {
+  width: 25px;
+}
+
+.mxHeight {
+  height: 725px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+/* create profile */
+.inputRadius {
+    border-radius: 20px;
+}
+
+.inputWidth {
+    max-width: 40%;
+}
+
+.inputLinks {
+    max-width: 46%;
+}
 </style>

@@ -1,6 +1,7 @@
 <template>
     <div>
         <div class="gap"></div>
+        <router-link :to="{ name: 'Profile' }" class="btn darkBlueBackGround whiteText redHover ml-5">Go back</router-link>
         <div class="container">
             <h2>Publish project</h2>
             <div class="mainForm pl-5 pr-5 pt-3">
@@ -195,6 +196,13 @@
 import firebase from 'firebase';
 import { db } from '../../Database';
 
+var d = new Date();
+var day = d.getDate();
+var month = d.getMonth() + 1;
+var year = d.getFullYear();
+
+var date = day + '-' + month + '-' + year
+
 export default {
     data() {
         return {
@@ -218,7 +226,8 @@ export default {
                 numberDownloads: '',
                 monthlyRevenue: '',
                 otherStatistics: '',
-                emailId: ''
+                emailId: '',
+                createdAt: date
             }
         }
     },
@@ -245,7 +254,8 @@ export default {
                     numberDownloads: this.projectInfo.numberDownloads,
                     monthlyRevenue: this.projectInfo.monthlyRevenue,
                     otherStatistics: this.projectInfo.otherStatistics,
-                    emailId: this.projectInfo.emailId
+                    emailId: this.projectInfo.emailId,
+                    createdAt: date
                 })
                 this.$router.push('/Projects')
             } else {

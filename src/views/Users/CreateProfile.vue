@@ -558,20 +558,6 @@
     </div>
 </template>
 
-<style>
-.inputRadius {
-    border-radius: 20px;
-}
-
-.inputWidth {
-    max-width: 40%;
-}
-
-.inputLinks {
-    max-width: 46%;
-}
-</style>
-
 <script>
 import firebase from 'firebase';
 import { db } from '../../Database';

@@ -1,10 +1,11 @@
 <template>
     <div>
         <div class="gap"></div>
+        <router-link :to="{ name: 'Projects' }" class="btn darkBlueBackGround whiteText redHover ml-5">Go back</router-link>
         <div v-for="project of addProject" :key="project['.key']" class="container">
             <div v-if="project['.key'] == route">
                 <h1 class="redText">{{project.projectName}}</h1>
-                <span>{{ new Date() | moment("dddd, MMMM Do YYYY") }}</span>
+                <h6>{{project.createdAt}}</h6>
 
                 <h5 class="mt-5">Type</h5>
                 <p>{{project.projectType}}</p>
@@ -44,20 +45,6 @@
         </div>
     </div>
 </template>
-
-<style>
-.littleDescription {
-    background-color: #e4e4e4;
-    max-width: 500px;
-}
-
-.vistors {
-    border: 1px solid lightgray;
-    max-width: 400px;
-    padding-left: 10px;
-    padding-top: 10px;
-}
-</style>
 
 <script>
 import firebase from 'firebase';

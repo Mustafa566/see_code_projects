@@ -55,7 +55,7 @@
                     <div class="col-md-5 cardMain mr-4 mb-4" v-for="project of addProject" :key="project['.key']">
                         <div class="row mr-1 mt-1">
                             <div class="col">
-                                <p class="float-left">Date</p>
+                                <h6 class="float-left">{{project.createdAt}}</h6>
                             </div>
                             <router-link :to="{ name: 'ProjectDetails', params: {id: project['.key']} }" class="underLine">
                                 <p class="whiteText underLine borderMoreInfo">More info</p>
@@ -67,20 +67,21 @@
                         </div>
                         <div class="bottomCard">
                             <div class="line"></div>
-                            <span class="infoCard">Website</span>
+                            <span class="infoCard">{{project.projectHomepage}}</span>
                             <img src="@/assets/Icons/blackStar.png" class="favorIcon" @click="isHidden = !isHidden">
                             <img src="@/assets/Icons/star.png" class="favorIcon" v-if="isHidden" @click="isHidden = !isHidden">
                             <span class="infoCard float mr-4">{{project.emailId}}</span>
-                                <div v-if="isLoggedIn == true">
-                                    <div class="col-xs-1">
-                                        <button @click="deleteItem(project['.key'])" class="btn btn-danger">Delete</button>
-                                    </div>
-                                    <div class="col-xs-1">
-                                        <router-link :to="{ name: 'Edit', params: {id: project['.key']} }" class="btn btn-warning">
-                                            Edit
-                                        </router-link>
-                                    </div>
+                            <!-- edit and delete buttons -->
+                            <div v-if="isLoggedIn == true" class="row gap ml-0">
+                                <div class="ml-2">
+                                    <img src="@/assets/Icons/delete.png" @click="deleteItem(project['.key'])" class="pointer deleteBtn">
                                 </div>
+                                <div class="ml-2">
+                                    <router-link :to="{ name: 'Edit', params: {id: project['.key']} }" class="pointer deleteBtn">
+                                        <img src="@/assets/Icons/edit.png" class="pointer deleteBtn">
+                                    </router-link>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
