@@ -23,75 +23,67 @@ Login methods:
 - Github
 
 todo:
-    ✔ Make Vue project @done(20-06-08 12:41)
-    ✔ Make Firebase database @done(20-06-08 12:41)
-    ✔ Make Homepage design in Photoshop @done(20-06-08 12:41)
-    ✔ Make Faq design in Photoshop @done(20-06-08 12:41)
-    ✔ Make Login design in Photoshop @done(20-06-08 12:41)
-    ✔ Make Register design in Photoshop @done(20-06-08 12:41)
-    ✔ Install all packets @done(20-06-08 12:41)
-    ✔ Make a illustrator vector @done(20-06-08 12:41)
-    ✔ Code login page @done(20-06-08 12:41)
-    ✔ Code Register page @done(20-06-08 12:41)
-    ✔ Connect Vue project with Firebase @done(20-06-08 12:41)
-    ✔ Backend register @done(20-06-08 12:41)
-    ✔ Backend login @done(20-06-08 12:41)
-    ✔ Design project page in Photoshop @done(20-06-08 12:41)
-    ✔ Code project page (Without firebase data) @done(20-06-08 12:41)
-    ✔ Favorite img @click done @done(20-06-08 12:41)
-    ✔ Make the icons bigger of the vector @done(20-06-08 12:41)
-    ✔ Make a SUBMIT PROJECT page @done(20-06-08 12:41)
-    ✔ Code submit project page and look for designs on internet @done(20-06-08 12:41)
-    ✔ Make a form and push the information to the Firebase database @done(20-06-08 12:41)
-    ✔ Preview before publishing @done(20-06-08 12:41)
-    ✔ Get data from firebase database on Project page @done(20-06-08 12:41)
-    ✔ Delete button need to work @done(20-06-08 12:41)
-    ✔ Edit button clickable goes to page @done(20-06-08 12:41)
-    ✔ Make edit page @done(20-06-08 12:41)
-    ✔ More info page and put all the information from the database @done(20-06-08 12:41)
-    ✔ Push email and username on a apart table @done(20-06-08 12:41)
-    ✔ When you register go to create profile page @done(20-06-08 12:41)
-        ✔ Your slogan @done(20-06-08 12:41)
-        ✔ GitHub username @done(20-06-08 12:41)
-        ✔ Facebook URL @done(20-06-08 12:41)
-        ✔ Instagram URL @done(20-06-08 12:41)
-        ✔ Twitter URL @done(20-06-08 12:41)
-        ✔ Linkedin URL @done(20-06-08 12:41)
-        ✔ Website URL @done(20-06-08 12:41)
-    ✔ All the data from the create profile page is going to the database @done(20-06-08 12:41)
-    ✔ Can't push the currentuser to the database @done(20-06-08 12:41)
-    ✔ If you dont have a profile you can't submit a project (not verified) @done(20-06-08 12:41)
-        ✔ Make a variable with verified is null or false if it is true you can submit project. @done(20-06-08 12:41)
-    ✔ Add Register page USERNAME input require @done(20-06-08 12:41)
-    ✔ Back button by edit page @done(20-06-08 12:41)
-    ✔ Created date to firebase when you register @done(20-06-08 12:41)
-    ✔ Find design of forgot password page @done(20-06-08 12:41)
-    ✔ Code forgot password page @done(20-06-08 12:41)
-    ✔ Make send email function @done(20-06-08 12:41)
-    ✔ profile username email and social media added @done(20-06-09 13:39)
-    ✔ Icons for social media @done(20-06-09 20:46)
-    ✔ Show user profile details @done(20-06-09 20:46)
-    ✔ Show your projects on profile @done(20-06-09 21:36)
-    ✔ Change password in profile @done(20-06-09 22:44)
-    ✔ When is the project posted date to firebase (date check login page register function) @done(20-06-10 01:01)
-    ✔ Change css style of edit and delete button @done(20-06-10 01:29)
-
-
-@LATER:
-    ✘ Recode homepage page @cancelled(20-04-30 22:30)
-    ✘ Code faq page @cancelled(20-05-04 17:28)
-    ✘ Favorite img click uid of post (True or false) checkbox @cancelled(20-05-08 18:49)
-    ✘ Button for favorite the post and goes to favorite page (Array push etc) @cancelled(20-05-08 18:44)
-    ✘ Make admin account @cancelled(20-05-23 22:57)
-
-@IDEAS:
+    ✔ Make Vue project @done(20-06-11 02:07)
+    ✔ Make Firebase database @done(20-06-11 02:07)
+    ✔ Make Homepage design in Photoshop @done(20-06-11 02:07)
+    ✔ Make Faq design in Photoshop @done(20-06-11 02:07)
+    ✔ Make Login design in Photoshop @done(20-06-11 02:07)
+    ✔ Make Register design in Photoshop @done(20-06-11 02:07)
+    ✔ Install all packets @done(20-06-11 02:07)
+    ✔ Make a illustrator vector @done(20-06-11 02:07)
+    ✔ Code login page @done(20-06-11 02:07)
+    ✔ Code Register page @done(20-06-11 02:07)
+    ✔ Connect Vue project with Firebase @done(20-06-11 02:07)
+    ✔ Backend register @done(20-06-11 02:07)
+    ✔ Backend login @done(20-06-11 02:07)
+    ✔ Design project page in Photoshop @done(20-06-11 02:07)
+    ✔ Code project page (Without firebase data) @done(20-06-11 02:07)
+    ✔ Favorite img @click done @done(20-06-11 02:07)
+    ✔ Make the icons bigger of the vector @done(20-06-11 02:07)
+    ✔ Make a SUBMIT PROJECT page @done(20-06-11 02:07)
+    ✔ Code submit project page and look for designs on internet @done(20-06-11 02:07)
+    ✔ Make a form and push the information to the Firebase database @done(20-06-11 02:07)
+    ✔ Preview before publishing @done(20-06-11 02:07)
+    ✔ Get data from firebase database on Project page @done(20-06-11 02:07)
+    ✔ Delete button need to work @done(20-06-11 02:07)
+    ✔ Edit button clickable goes to page @done(20-06-11 02:07)
+    ✔ Make edit page @done(20-06-11 02:07)
+    ✔ More info page and put all the information from the database @done(20-06-11 02:07)
+    ✔ Push email and username on a apart table @done(20-06-11 02:07)
+    ✔ When you register go to create profile page @done(20-06-11 02:07)
+        ✔ Your slogan @done(20-06-11 02:07)
+        ✔ GitHub username @done(20-06-11 02:07)
+        ✔ Facebook URL @done(20-06-11 02:07)
+        ✔ Instagram URL @done(20-06-11 02:07)
+        ✔ Twitter URL @done(20-06-11 02:07)
+        ✔ Linkedin URL @done(20-06-11 02:07)
+        ✔ Website URL @done(20-06-11 02:07)
+    ✔ All the data from the create profile page is going to the database @done(20-06-11 02:07)
+    ✔ Can't push the currentuser to the database @done(20-06-11 02:07)
+    ✔ If you dont have a profile you can't submit a project (not verified) @done(20-06-11 02:07)
+        ✔ Make a variable with verified is null or false if it is true you can submit project. @done(20-06-11 02:07)
+    ✔ Add Register page USERNAME input require @done(20-06-11 02:07)
+    ✔ Back button by edit page @done(20-06-11 02:07)
+    ✔ Created date to firebase when you register @done(20-06-11 02:07)
+    ✔ Find design of forgot password page @done(20-06-11 02:07)
+    ✔ Code forgot password page @done(20-06-11 02:07)
+    ✔ Make send email function @done(20-06-11 02:07)
+    ✔ profile username email and social media added @done(20-06-11 02:07)
+    ✔ Icons for social media @done(20-06-11 02:07)
+    ✔ Show user profile details @done(20-06-11 02:07)
+    ✔ Show your projects on profile @done(20-06-11 02:07)
+    ✔ Change password in profile @done(20-06-11 02:07)
+    ✔ When is the project posted date to firebase (date check login page register function) @done(20-06-11 02:07)
+    ✔ Change css style of edit and delete button @done(20-06-11 02:07)
+    ✔ Link social media @done(20-06-11 02:07)
+    ✔ When post is deleted make a alert in color green @done(20-06-11 02:07)
+    ✔ Click on social icons goes to website @done(20-06-11 02:07)
     
 
 @today 
-    ✘ @Waiting Check if currentUser is verified @cancelled(20-06-03 01:45)
-    ✘ Link social media @cancelled(20-06-09 21:53)
-    ✘ When post is deleted make a alert in color green @cancelled(20-06-10 01:30)
-    ✘ Profile picture @cancelled(20-05-28 17:14)
+    ✘ Code faq page @cancelled(20-05-04 17:28)
+    ✘ Recode homepage page @cancelled(20-04-30 22:30)
+    ✘ Make admin account @cancelled(20-05-23 22:57)
 
         
 ☐ Can only visit if user is logged in
@@ -122,43 +114,4 @@ export default {
     }
 }
 </script>
-```
-
-☐ Profile picture
-```
-<input type="file" id="fileUploader" />
-
-file: {}
-
-register() {
-    var el = document.getElementById('fileUploader');
-        el.addEventListener('change', function (e) {
-        this.file = e.target.files[0];
-    })
-    firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
-        .then(/*eslint-disable-line*/user => {
-            // setTimeout(() => {
-            //     this.$router.push('/');
-            //     location.reload();
-            // }, 2000);
-            firebase
-            .storage()
-            .ref("users")
-            .child(user.user.uid + "/profile.jpg")
-            .put(this.file);
-            this.isHidden = false;
-        },
-        err => {  
-            alert(err.message);
-        })
-},
-    uploadImage(e) {
-        let file = e.target.files[0];
-        firebase
-            .app()
-            .storage()
-            .ref('images')
-            .child(file.name)
-            .put(this.file);
-    },
 ```

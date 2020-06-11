@@ -9,9 +9,9 @@
         <router-link :to="{ name: 'Projects' }" class="nav-link headerSubText mr-5">Projects</router-link>
         <router-link :to="{ name: 'Faq' }" class="nav-link headerSubText mr-5">FAQ</router-link>
         <router-link :to="{ name: 'Login' }" class="nav-link headerSubText" v-if="!isLoggedIn">Login</router-link>
-          <div v-for="profile of userProfile" :key="profile['.key']">
+          <!-- <div v-for="profile of userProfile" :key="profile['.key']">
             <p class="whiteText a verified" v-if="profile.emailId == user">{{profile.verified}} verified</p>
-          </div>
+          </div> -->
         <div class="display">
           <router-link :to="{ name: 'Profile' }" class="nav-link headerSubText mr-5" v-if="isLoggedIn">Profile</router-link>
           <div class="dropdown-content">
@@ -389,6 +389,11 @@ $whiteSmoke: #f3f3f3;
   height: 725px;
   overflow: scroll;
   overflow-x: hidden;
+}
+
+.center {
+  margin: auto;
+  width: 70%;
 }
 
 /* create profile */

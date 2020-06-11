@@ -181,8 +181,8 @@
                     <div class="bottomCard">
                         <div class="line"></div>
                         <span class="infoCard">Website</span>
-                        <img src="@/assets/Icons/blackStar.png" class="favorIcon" @click="isHidden = !isHidden">
-                        <img src="@/assets/Icons/star.png" class="favorIcon" v-if="isHidden" @click="isHidden = !isHidden">
+                         
+                          
                         <span class="infoCard float mr-4">{{projectInfo.emailId}}</span>
                     </div>
                 </div><br>

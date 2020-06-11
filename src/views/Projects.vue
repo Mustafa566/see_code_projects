@@ -4,7 +4,7 @@
             <div class="col-md-2 col-sm-10 ml-5 sideBar darkBlueBackGround">
                 <div class="sideBarInfo">
                     <h5 class="whiteText mt-2">Keyword:</h5>
-                    <input type="text" class="form-control inputHeight">
+                    <input type="text" v-model="search" class="form-control inputHeight">
 
                     <h5 class="whiteText mt-5">Platform:</h5>
 
@@ -68,8 +68,6 @@
                         <div class="bottomCard">
                             <div class="line"></div>
                             <span class="infoCard">{{project.projectHomepage}}</span>
-                            <img src="@/assets/Icons/blackStar.png" class="favorIcon" @click="isHidden = !isHidden">
-                            <img src="@/assets/Icons/star.png" class="favorIcon" v-if="isHidden" @click="isHidden = !isHidden">
                             <span class="infoCard float mr-4">{{project.emailId}}</span>
                             <!-- edit and delete buttons -->
                             <div v-if="isLoggedIn == true" class="row gap ml-0">
@@ -95,11 +93,17 @@
 import firebase from 'firebase';
 import { db } from '../Database';
 
+// var ref = firebase.database().ref("addProject");
+// ref.orderByChild("projectName").equalTo("admin").on("child_added", function(snapshot) {
+//     console.log(snapshot.key);
+// });
+
 export default {
     data() {
         return {
             isHidden: false,
             user: '',
+            search: '',
             isLoggedIn: false,
             currentUser: false,
             addProject: []

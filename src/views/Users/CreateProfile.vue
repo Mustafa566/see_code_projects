@@ -547,6 +547,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="row mt-5">
                     <div class="col-md col-sm">
                         <input type="submit" class="btn btn-primary w-75 submitProject" value="Save"/>
@@ -569,6 +570,7 @@ export default {
             currentUser: false,
             user: '',
             profileInfo: {
+                http: 'http://',
                 fullName: '',
                 bio: '',
                 slogan: '',
@@ -612,7 +614,7 @@ export default {
                         instagram: this.profileInfo.instagram,
                         twitter: this.profileInfo.twitter,
                         linkedin: this.profileInfo.linkedin,
-                        personalWebsite: this.profileInfo.personalWebsite,
+                        personalWebsite: this.profileInfo.http + this.profileInfo.personalWebsite,
                         emailId: this.profileInfo.emailId,
                         verified: this.profileInfo.verified
                     })

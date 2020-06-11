@@ -21,35 +21,31 @@
                                     <p class="card-title font-weight-bold">{{userProfiles.slogan}}</p>
                                 </div>
                             <div class="w-100 lines mt-4 mb-4"></div>
-                                <!-- facebook -->
-                                <div class="row pl-5">
-                                    <img src="@/assets/Icons/Profile/facebook.png" class="img-fluid icons mr-3" alt="Responsive image">
-                                    <p class="card-text">{{userProfiles.facebook}}</p>
-                                </div>
-                                <!-- twitter -->
-                                <div class="row pl-5 mt-3">
-                                    <img src="@/assets/Icons/Profile/twitter.png" class="img-fluid icons mr-3" alt="Responsive image">
-                                    <p class="card-text">{{userProfiles.twitter}}</p>
-                                </div>
-                                <!-- twitter -->
-                                <div class="row pl-5 mt-3">
-                                    <img src="@/assets/Icons/Profile/linkedin.png" class="img-fluid icons mr-3" alt="Responsive image">
-                                    <p class="card-text">{{userProfiles.linkedin}}</p>
-                                </div>
-                                <!-- instagram -->
-                                <div class="row pl-5 mt-3">
-                                    <img src="@/assets/Icons/Profile/instagram.png" class="img-fluid icons mr-3" alt="Responsive image">
-                                    <p class="card-text">{{userProfiles.instagram}}</p>
-                                </div>
-                                <!-- github -->
-                                <div class="row pl-5 mt-3">
-                                    <img src="@/assets/Icons/Profile/github.png" class="img-fluid icons mr-3" alt="Responsive image">
-                                    <p class="card-text">{{userProfiles.github}}</p>
-                                </div>
-                                <!-- personalWebsite -->
-                                <div class="row pl-5 mt-3">
-                                    <img src="@/assets/Icons/Profile/personalWebsite.png" class="img-fluid icons mr-3" alt="Responsive image">
-                                    <p class="card-text">{{userProfiles.personalWebsite}}</p>
+                                <div class="center">
+                                    <!-- facebook -->
+                                    <a :href="userProfiles.facebook" target="_blank" class="ml-1 card-text">
+                                        <img src="@/assets/Icons/Profile/facebook.png" class="img-fluid icons mr-3" alt="Responsive image">
+                                    </a>
+                                    <!-- linkedin -->
+                                    <a :href="userProfiles.linkedin" target="_blank" class="ml-1 card-text">
+                                        <img src="@/assets/Icons/Profile/linkedin.png" class="img-fluid icons mr-3" alt="Responsive image">
+                                    </a>
+                                    <!-- twitter -->
+                                    <a :href="'https://twitter.com/search?q=' + userProfiles.twitter + '&src=typed_query'" target="_blank" class="ml-1 card-text">
+                                        <img src="@/assets/Icons/Profile/twitter.png" class="img-fluid icons mr-3" alt="Responsive image">
+                                    </a>
+                                    <!-- instagram -->
+                                    <a :href="'https://www.instagram.com/' + userProfiles.instagram" target="_blank" class="ml-1 card-text">
+                                        <img src="@/assets/Icons/Profile/instagram.png" class="img-fluid icons mr-3" alt="Responsive image">
+                                    </a>
+                                    <!-- github -->
+                                    <a :href="'https://github.com/' + userProfiles.github" target="_blank" class="ml-1 card-text">
+                                        <img src="@/assets/Icons/Profile/github.png" class="img-fluid icons mr-3" alt="Responsive image">
+                                    </a>
+                                    <!-- personalWebsite -->
+                                    <a :href="userProfiles.personalWebsite" target="_blank" class="ml-1 card-text">
+                                        <img src="@/assets/Icons/Profile/personalWebsite.png" class="img-fluid icons mr-3" alt="Responsive image">
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -119,6 +115,17 @@
             <div class="col-md-5 mxHeight">
                 <div class="card w-100">
                     <h3 class="card-title redText mt-2 mx-auto">Your projects</h3>
+                    <!-- alert when project is deleted -->
+                    <div class="row" v-if="projectIsGone">
+                        <div class="col">
+                            <div class="alert alert-success alert-dismissible fade show w-100" role="alert">
+                                Your project is deleted
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                     <div class="w-100 lines mt-2 mb-5"></div>
                     <!-- v-for -->
                     <div v-for="project of addProject" :key="project['.key']">
@@ -128,7 +135,7 @@
                                 <div class="col-md-8 cardMain mx-auto mb-4">
                                     <div class="row mr-1 mt-1">
                                         <div class="col">
-                                            <p class="float-left">Date</p>
+                                            <h class="float-left">{{project.createdAt}}</h>
                                         </div>
                                         <router-link :to="{ name: 'ProjectDetails', params: {id: project['.key']} }" class="underLine">
                                             <p class="whiteText underLine borderMoreInfo">More info</p>
@@ -141,13 +148,13 @@
                                     <div class="bottomCard">
                                         <div class="line"></div>
                                         <span class="infoCard">Website</span>
-                                        <img src="@/assets/Icons/blackStar.png" class="favorIcon" @click="isHidden = !isHidden">
-                                        <img src="@/assets/Icons/star.png" class="favorIcon" v-if="isHidden" @click="isHidden = !isHidden">
+                                         
+                                          
                                         <span class="infoCard float mr-4">{{project.emailId}}</span>
                                         <!-- edit and delete -->
                                         <div v-if="isLoggedIn == true" class="row gap ml-0">
                                             <div class="ml-2">
-                                                <img src="@/assets/Icons/delete.png" @click="deleteItem(project['.key'])" class="pointer deleteBtn">
+                                                <img src="@/assets/Icons/delete.png" @click="deleteItem(project['.key']); projectIsGone = true" class="pointer deleteBtn">
                                             </div>
                                             <div class="ml-2">
                                                 <router-link :to="{ name: 'Edit', params: {id: project['.key']} }" class="pointer deleteBtn">
@@ -163,7 +170,7 @@
                 </div>
             </div>
         </div>
-        <div class="gap"></div>
+    <div class="gap"></div>
     </div>    
 </template>
 
@@ -178,6 +185,7 @@ export default {
             currentUser: false,
             isHidden: false,
             seen: false,
+            projectIsGone: false,
             error: '',
             user: '',
             userProfile: [],
