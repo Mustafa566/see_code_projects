@@ -70,7 +70,7 @@
                             <span class="infoCard">{{project.projectHomepage}}</span>
                             <span class="infoCard float mr-4">{{project.emailId}}</span>
                             <!-- edit and delete buttons -->
-                            <div v-if="isLoggedIn == true" class="row gap ml-0">
+                            <div v-if="isLoggedIn == true && project.emailId == user" class="row gap ml-0">
                                 <div class="ml-2">
                                     <img src="@/assets/Icons/delete.png" @click="deleteItem(project['.key'])" class="pointer deleteBtn">
                                 </div>

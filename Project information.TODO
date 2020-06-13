@@ -78,12 +78,29 @@ todo:
     ✔ Link social media @done(20-06-11 02:07)
     ✔ When post is deleted make a alert in color green @done(20-06-11 02:07)
     ✔ Click on social icons goes to website @done(20-06-11 02:07)
+    ✔ Check id currentUser has a profile if not can't go to "add project" @done(20-06-14 00:31)
+    ✔ Make alertbox that he need to make a profile with link (add project) @done(20-06-14 00:31)
     
 
 @today 
-    ✘ Code faq page @cancelled(20-05-04 17:28)
     ✘ Recode homepage page @cancelled(20-04-30 22:30)
+    ✘ Code faq page @cancelled(20-05-04 17:28)
     ✘ Make admin account @cancelled(20-05-23 22:57)
+        - List of user from (users)
+        - List of user profile (userProfile)
+        - List of all project posts (addProject)
+    ✘ Responsive (Phone, Tablet, Laptop) @cancelled(20-06-14 00:40)
+        ✘ App.vue @cancelled(20-06-14 00:40)
+        ✘ Project.vue @cancelled(20-06-14 00:40)
+        ✘ ProjectDetails.vue @cancelled(20-06-14 00:40)
+        ✘ Login.vue @cancelled(20-06-14 00:40)
+        ✘ Index.vue @cancelled(20-06-14 00:40)
+        ✘ ForgotPassword.vue @cancelled(20-06-14 00:40)
+        ✘ Faq.vue @cancelled(20-06-14 00:40)
+        ✘ Profile.vue @cancelled(20-06-14 00:40)
+        ✘ EditItem.vue @cancelled(20-06-14 00:40)
+        ✘ CreateProfile.vue @cancelled(20-06-14 00:40)
+        ✘ AddProject.vue @cancelled(20-06-14 00:40)
 
         
 ☐ Can only visit if user is logged in

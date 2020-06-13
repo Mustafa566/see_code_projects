@@ -68,6 +68,17 @@
             </details>
          </div>
       </div>
+      
+      <div class="gap"></div>
+      <div class="gap"></div>
+      <div class="gap"></div>
+      <div class="gap"></div>
+      <div class="gap"></div>
+      <div class="gap"></div>
+      <div class="gap"></div>
+      <div class="gap"></div>
+      <div class="gap"></div>
+      <div class="gap"></div>
     </div>
 </template>
 

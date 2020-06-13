@@ -9,9 +9,6 @@
         <router-link :to="{ name: 'Projects' }" class="nav-link headerSubText mr-5">Projects</router-link>
         <router-link :to="{ name: 'Faq' }" class="nav-link headerSubText mr-5">FAQ</router-link>
         <router-link :to="{ name: 'Login' }" class="nav-link headerSubText" v-if="!isLoggedIn">Login</router-link>
-          <!-- <div v-for="profile of userProfile" :key="profile['.key']">
-            <p class="whiteText a verified" v-if="profile.emailId == user">{{profile.verified}} verified</p>
-          </div> -->
         <div class="display">
           <router-link :to="{ name: 'Profile' }" class="nav-link headerSubText mr-5" v-if="isLoggedIn">Profile</router-link>
           <div class="dropdown-content">
@@ -57,11 +54,6 @@ export default {
       })
     }
   },
-  // watch: {
-  //   userProfile(newValue){
-  //     console.log(newValue)
-  //   }
-  // },
   mounted() {
     if(firebase.auth().currentUser) {
       this.isLoggedIn = true;
@@ -71,8 +63,6 @@ export default {
       if (currentUser) {
         this.user = firebase.auth().currentUser.email;
         this.isLoggedIn = true;
-        // console.log(this.user);
-        // console.log(this.isLoggedIn);
       } else {
         console.log('no user'); 
       }
@@ -246,6 +236,10 @@ $whiteSmoke: #f3f3f3;
   overflow-x: hidden;
 }
 
+.homeImg {
+  width: 400px;
+}
+
 /* login page */
 .loginMain {
   width: 500px;
@@ -350,6 +344,10 @@ $whiteSmoke: #f3f3f3;
   border-radius: 10px;
   height: 250px;
   margin: 0 auto;
+}
+
+.lineHeight {
+  line-height: 2rem;
 }
 
 /* project details */

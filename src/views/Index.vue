@@ -24,7 +24,10 @@
             <div class="row mt-5">
                 <div class="col-md-6 text-center numberText">01</div>
                 <div class="col text-center">
-                    Image
+                    <img src="@/assets/secure_login.svg" class="homeImg mb-3">
+                    <h6>
+                        Go to the login page and make a account
+                    </h6>
                 </div>
             </div>
         <div class="row">
