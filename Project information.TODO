@@ -80,15 +80,15 @@ todo:
     ✔ Click on social icons goes to website @done(20-06-11 02:07)
     ✔ Check id currentUser has a profile if not can't go to "add project" @done(20-06-14 00:31)
     ✔ Make alertbox that he need to make a profile with link (add project) @done(20-06-14 00:31)
+    ✔ Make admin account @done(20-06-19 15:35)
+        ✔ List of user from (users) @done(20-06-20 02:49)
+        ✔ List of user profile (userProfile) @done(20-06-20 02:49)
+        ✔ List of all project posts (addProject) @done(20-06-20 03:11)
+    ✔ Recode homepage page @done(20-06-20 03:26)
     
 
 @today 
-    ✘ Recode homepage page @cancelled(20-04-30 22:30)
     ✘ Code faq page @cancelled(20-05-04 17:28)
-    ✘ Make admin account @cancelled(20-05-23 22:57)
-        - List of user from (users)
-        - List of user profile (userProfile)
-        - List of all project posts (addProject)
     ✘ Responsive (Phone, Tablet, Laptop) @cancelled(20-06-14 00:40)
         ✘ App.vue @cancelled(20-06-14 00:40)
         ✘ Project.vue @cancelled(20-06-14 00:40)

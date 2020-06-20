@@ -9,14 +9,14 @@
         <router-link :to="{ name: 'Projects' }" class="nav-link headerSubText mr-5">Projects</router-link>
         <router-link :to="{ name: 'Faq' }" class="nav-link headerSubText mr-5">FAQ</router-link>
         <router-link :to="{ name: 'Login' }" class="nav-link headerSubText" v-if="!isLoggedIn">Login</router-link>
-        <div class="display">
-          <router-link :to="{ name: 'Profile' }" class="nav-link headerSubText mr-5" v-if="isLoggedIn">Profile</router-link>
-          <div class="dropdown-content">
-            <p class="whiteText a verified">{{user}}</p>
+          <div class="display">
+            <router-link :to="{ name: 'Profile' }" class="nav-link headerSubText mr-5" v-if="isLoggedIn">Profile</router-link>
+            <div class="dropdown-content">
+              <p class="whiteText a verified">{{user}}</p>
+            </div>
           </div>
-        </div>
-
         <router-link :to="{ name: 'AddProject' }" class="nav-link headerSubText mr-5" v-if="isLoggedIn">Add project</router-link>
+        <router-link :to="{ name: 'Admin' }" class="nav-link headerSubText mr-5" v-if="isAdmin">Admin</router-link>
         <div class="nav-link headerSubText pointer" @click="logout" v-if="isLoggedIn">Logout</div>
       </ul>
     </nav>
@@ -38,9 +38,10 @@ export default {
     return {
       isLoggedIn: false,
       currentUser: false,
-      user: '',
+      isAdmin: false,
       verified: false,
-      userProfile: []
+      user: '',
+      userProfile: [],
     }
   },
   firebase: {
@@ -63,6 +64,12 @@ export default {
       if (currentUser) {
         this.user = firebase.auth().currentUser.email;
         this.isLoggedIn = true;
+        if (this.user == 'admin@gmail.com') {
+          this.isAdmin = true;
+          console.log(this.isAdmin);
+        } else {
+          // this.$router.push('/Profile')
+        }
       } else {
         console.log('no user'); 
       }
@@ -123,6 +130,10 @@ $whiteSmoke: #f3f3f3;
 
 .gap {
   padding-top: 50px;
+}
+
+.gap2 {
+  padding-top: 360px;
 }
 
 .pointer {

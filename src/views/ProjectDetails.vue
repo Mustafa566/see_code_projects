@@ -10,7 +10,7 @@
                 <h5 class="mt-5">Type</h5>
                 <p>{{project.projectType}}</p>
 
-                <p v-if="project.projectHomepage != null">{{project.projectHomepage}}</p>
+                <a :href="project.projectHomepage" target="_blank"><p v-if="project.projectHomepage != null">{{project.projectHomepage}}</p></a>
                 <div class="mt-4 vistors" 
                     v-if="
                     project.uniqueVisitors != null && 

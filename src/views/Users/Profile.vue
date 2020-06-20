@@ -147,9 +147,7 @@
                                     </div>
                                     <div class="bottomCard">
                                         <div class="line"></div>
-                                        <span class="infoCard">Website</span>
-                                         
-                                          
+                                        <a :href="project.projectHomepage" target="_blank" class="infoCard">{{project.projectHomepage}}</a>
                                         <span class="infoCard float mr-4">{{project.emailId}}</span>
                                         <!-- edit and delete -->
                                         <div v-if="isLoggedIn == true" class="row gap ml-0">
@@ -177,6 +175,14 @@
 <script>
 import firebase from 'firebase';
 import { db } from '../../Database';
+
+let usersRef = firebase.database().ref('users');
+usersRef.orderByChild('email').equalTo('admin@gmail.com').on("value", function(snapshot) {
+    console.log(snapshot.val());
+    snapshot.forEach(function(data) {
+        console.log(data.key);
+    });
+});
 
 export default {
     data() {

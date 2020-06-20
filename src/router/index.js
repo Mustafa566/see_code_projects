@@ -10,6 +10,7 @@ import EditItem from '../views/Users/EditItem.vue'
 import CreateProfile from '../views/Users/CreateProfile.vue'
 import ProjectDetails from '../views/ProjectDetails.vue'
 import ForgotPassword from '../views/ForgotPassword.vue'
+import Admin from '../views/Admin.vue'
 import '../Database'
 
 Vue.use(VueRouter)
@@ -64,6 +65,11 @@ Vue.use(VueRouter)
     name: 'Edit',
     path: '/Edit/:id',
     component: EditItem,
+  },
+  {
+    name: 'Admin',
+    path: '/Admin',
+    component: Admin,
   }
 ]
 

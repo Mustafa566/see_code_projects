@@ -67,7 +67,7 @@
                         </div>
                         <div class="bottomCard">
                             <div class="line"></div>
-                            <span class="infoCard">{{project.projectHomepage}}</span>
+                            <a :href="project.projectHomepage" target="_blank"><span class="infoCard">{{project.projectHomepage}}</span></a>
                             <span class="infoCard float mr-4">{{project.emailId}}</span>
                             <!-- edit and delete buttons -->
                             <div v-if="isLoggedIn == true && project.emailId == user" class="row gap ml-0">

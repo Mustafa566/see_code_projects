@@ -113,6 +113,7 @@
                                 <input 
                                 class="form-control" 
                                 type="text" 
+                                placeholder="www.websitename.com"
                                 v-model="projectInfo.projectHomepage">
                             </div>
                         </div>
@@ -251,41 +252,36 @@
                     </div><br>
                 </div>
             </div>
-
-            <!-- Popup -->
-            <div v-if="profile.emailId == user && profile.verified == false">
-                <div class="col">
-                    <div class="alert alert-danger" role="alert">
-                        <h3 class="alert-heading">Your profile is incomplete !</h3>
-                        <div class="mt-5"></div>
-                        <h6 class="lineHeight">
-                            You need to make a profile to have access to post your project.<br>
-                            The first thing to do is click below the link and you go to the "Create Profile"
-                            section.<br>
-                            Make your profile and click on the submit button. When it is done you can publish 
-                            your project.
-                        </h6>
-                    <hr>
-                        <h6 class="mb-0">
-                            Click here to go to the
-                            "
-                            <router-link :to="{ name: 'CreateProfile' }">Create Profile</router-link>
-                            "
-                            page.
-                        </h6>
-                    </div>
-                </div>
-                <div class="gap"></div>
-                <div class="gap"></div>
-                <div class="gap"></div>
-                <div class="gap"></div>
-                <div class="gap"></div>
-                <div class="gap"></div>
-                <div class="gap"></div>
-                <div class="gap"></div>
-                <div class="gap"></div>
-            </div>
         </div>
+        <!-- Popup -->
+        <!-- <div class="container">
+            <div>
+                <div>
+                    <div class="col">
+                        <div class="alert alert-danger" role="alert">
+                            <h3 class="alert-heading">Your profile is incomplete !</h3>
+                            <div class="mt-5"></div>
+                            <h6 class="lineHeight">
+                                You need to make a profile to have access to post your project.<br>
+                                The first thing to do is click below the link and you go to the "Create Profile"
+                                section.<br>
+                                Make your profile and click on the submit button. When it is done you can publish 
+                                your project.
+                            </h6>
+                        <hr>
+                            <h6 class="mb-0">
+                                Click here to go to the
+                                "
+                                <router-link :to="{ name: 'CreateProfile' }">Create Profile</router-link>
+                                "
+                                page.
+                            </h6>
+                        </div>
+                    </div>
+                    <div class="gap2"></div>
+                </div>
+            </div>
+        </div> -->
     </div>
 </template>
 
@@ -309,6 +305,7 @@ export default {
             userProfile: [],
             isHidden: false,
             projectInfo: {
+                http: 'http://',
                 firstName: '',
                 middleName: '',
                 lastName: '',
@@ -345,7 +342,7 @@ export default {
                     projectName: this.projectInfo.projectName,
                     littleDescription: this.projectInfo.littleDescription,
                     projectType: this.projectInfo.projectType,
-                    projectHomepage: this.projectInfo.projectHomepage,
+                    projectHomepage: this.projectInfo.http + this.projectInfo.projectHomepage,
                     projectDescription: this.projectInfo.projectDescription,
                     videoLink: this.projectInfo.videoLink,
                     projectBuild: this.projectInfo.projectBuild,
@@ -371,15 +368,9 @@ export default {
             if (currentUser) {
                 this.user = firebase.auth().currentUser.email;
                 this.isLoggedIn = true;
+                console.log(this.user)
             } else {
                 this.$router.push('/Login')
-            }
-
-            if(this.verified == true) {
-                this.user = firebase.auth().currentUser.email;
-                this.isLoggedIn = true;
-            } else {
-                // this.$router.push('/Profile')
             }
         });
     }
